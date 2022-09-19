@@ -1,5 +1,7 @@
+import { Typography } from '@mui/material';
+
 const RocketPage = () => {
-  return <h1>Rocket Page</h1>;
+  return <Typography variant="h1">Rocket Page</Typography>;
 };
 
 export default RocketPage;

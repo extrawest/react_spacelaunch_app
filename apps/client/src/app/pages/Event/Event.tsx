@@ -1,5 +1,7 @@
+import { Typography } from '@mui/material';
+
 const EventPage = () => {
-  return <h1>Event Page</h1>;
+  return <Typography variant="h1">Event Page</Typography>;
 };
 
 export default EventPage;
