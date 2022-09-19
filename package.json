@@ -7,6 +7,7 @@
     "build": "nx build",
     "test": "nx test",
     "lint": "nx lint",
+    "deploy:live": "nx build && firebase deploy --only hosting",
     "husky:prepare": "husky install"
   },
   "private": true,

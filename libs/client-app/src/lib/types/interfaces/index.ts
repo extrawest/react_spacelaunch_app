@@ -1,1 +1,1 @@
-export { RouteParams } from './routes';
+export type { RouteParams } from './routes';
