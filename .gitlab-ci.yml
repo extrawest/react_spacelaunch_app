@@ -1,0 +1,30 @@
+image: node:16
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  before_script:
+    - yarn install
+  allow_failure: false
+  script:
+    - yarn test
+
+production:
+  stage: deploy
+  before_script:
+    - yarn global add firebase-tools
+    - yarn install
+    - yarn build
+    - firebase use $FIREBASE_PROJECT_ID --token $FIREBASE_TOKEN
+  only:
+    - main
+  allow_failure: false
+  script:
+    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN --only hosting

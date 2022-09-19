@@ -13,8 +13,11 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "importsNotUsedAsValues": "error",
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@vladyslav.haiduk_react/client-app": ["libs/client-app/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

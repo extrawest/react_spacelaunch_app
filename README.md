@@ -1,94 +1,100 @@
-
-
-# VladyslavHaidukReact
+# Spacelaunch App
 
 This project was generated using [Nx](https://nx.dev).
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
-
-🔎 **Smart, Fast and Extensible Build System**
-
-## Adding capabilities to your workspace
 
 Nx supports many plugins which add capabilities for developing different types of applications and different tools.
 
 These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
 
-Below are our core plugins:
+### Deployed Project
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+Live: [budget-tracker-3da85.web.app](https://spacelaunch-9d930.web.app/)
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+### Documentation
 
-## Generate an application
+Here is a short description of all main scripts, commands, and other things that will allow you to start developing this project
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+#### How to set up your Local Environment?
 
-> You can use any of the plugins above to generate applications as well.
+To start project development you need to have correct node and npm versions. The correct version of the node is in the .nvmrc file. To use it you must, to have nvm(node version manager) installed [(installation guide)](https://github.com/nvm-sh/nvm#installing-and-updating). When you have it installed you can use `nvm use` command from the project root, and it will use version from .nvmrc
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+```bash
+# Use node version specified in .nvmrc
+nvm use
 
-## Generate a library
+# Show current node version
+nvm current
+```
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+If you want to update node version you have to do it in .nvmrc
 
-> You can also use any of the plugins above to generate libraries as well.
+#### How to write correct and meaningful commit messages?
 
-Libraries are shareable across libraries and applications. They can be imported from `@vladyslav.haiduk-react/mylib`.
+Everyone should write good commit messages, to be able in the future understands what and when was created
 
-## Development server
+Specification: [www.conventionalcommits.org](https://www.conventionalcommits.org/en/v1.0.0/)
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Message rules for this project: [conventional-changelog/commitlint](https://github.com/conventional-changelog/commitlint#what-is-commitlint)
 
-## Code scaffolding
+#### Project Scripts (from package.json)
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+```bash
+# Start development server for client app
+yarn start
 
-## Build
+# Build client app for production
+yarn build
 
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Run unit tests for client app
+yarn test
 
-## Running unit tests
+# Lint code for client app
+yarn lint
 
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+# Deploy client app to live
+yarn deploy:live
+```
 
-Run `nx affected:test` to execute the unit tests affected by a change.
+#### Nx CLI Cheat Sheet
 
-## Running end-to-end tests
+```bash
+# Generate an application
+nx g @nrwl/react:app <my-app>
 
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+# Generate a library
+nx g @nrwl/react:lib <my-lib>
 
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
+# Start dev server
+nx serve <my-app>
 
-## Understand your workspace
+# Generate a new component
+nx g @nrwl/react:component <my-component> --project=<my-app>
 
-Run `nx graph` to see a diagram of the dependencies of your projects.
+# Build a project
+nx build <my-app>
 
-## Further help
+# Execute the unit tests via Jest
+nx test <my-app>
 
-Visit the [Nx Documentation](https://nx.dev) to learn more.
+# Execute the unit tests affected by a change
+nx affected:test
 
+# Execute the end-to-end tests via Cypress
+nx e2e <my-app>
 
+# Execute the end-to-end tests affected by a change
+nx affected:e2e
 
-## ☁ Nx Cloud
+# See a diagram of the dependencies of your projects
+nx graph
+```
 
-### Distributed Computation Caching & Distributed Task Execution
+### List of Tools
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![Material UI](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=mui&logoColor=white)
+![Nx](https://img.shields.io/badge/workspace-143157?style=for-the-badge&logo=NX&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCB2B?style=for-the-badge&logo=firebase&logoColor=333333)

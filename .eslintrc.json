@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "eslint-plugin-import-helpers"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -17,6 +17,21 @@
                 "onlyDependOnLibsWithTags": ["*"]
               }
             ]
+          }
+        ],
+        "react/jsx-max-props-per-line": ["error", { "maximum": 1 }],
+        "import-helpers/order-imports": [
+          "error",
+          {
+            "newlinesBetween": "always",
+            "groups": [
+              "/^@?react(.*)$/",
+              "/^@mui/(.*)$/",
+              "module",
+              "/^@vladyslav.haiduk_react/(.*)$/",
+              ["parent", "sibling", "index"]
+            ],
+            "alphabetize": { "order": "asc", "ignoreCase": true }
           }
         ]
       }

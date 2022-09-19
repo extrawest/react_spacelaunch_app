@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "vladyslav.haiduk-react",
+  "npmScope": "vladyslav.haiduk_react",
   "affected": {
     "defaultBase": "main"
   },
