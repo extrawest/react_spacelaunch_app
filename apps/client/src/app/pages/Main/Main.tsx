@@ -1,7 +1,12 @@
-import { Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 
 const MainPage = () => {
-  return <Typography variant="h1">Main Page</Typography>;
+  return (
+    <Stack>
+      <Typography variant="h1">Main Page</Typography>
+      <Typography variant="body1">Some description</Typography>
+    </Stack>
+  );
 };
 
 export default MainPage;
