@@ -1,23 +1,29 @@
 {
-  "name": "vladyslav.haiduk-react",
+  "name": "vladyslav.haiduk_react",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "lint": "nx lint",
+    "husky:prepare": "husky install"
   },
   "private": true,
   "dependencies": {
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
+    "@mui/material": "^5.10.5",
     "core-js": "^3.6.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^6.4.0",
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@emotion/babel-plugin": "11.10.2",
     "@nrwl/cli": "14.7.5",
     "@nrwl/cypress": "14.7.5",
@@ -44,6 +50,7 @@
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-react": "7.31.1",
     "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "^8.0.1",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "nx": "14.7.5",
