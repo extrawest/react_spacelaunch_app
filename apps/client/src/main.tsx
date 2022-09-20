@@ -1,6 +1,8 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 
+import { registerSW } from '@vladyslav.haiduk_react/shared/utils';
+
 import App from './app/App';
 
 const root = ReactDOM.createRoot(
@@ -11,3 +13,5 @@ root.render(
     <App />
   </StrictMode>
 );
+
+registerSW('serviceWorker.js');
