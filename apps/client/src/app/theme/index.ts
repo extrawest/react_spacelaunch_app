@@ -3,12 +3,12 @@ import { createTheme } from '@mui/material';
 import '@fontsource/montserrat/index.css';
 import '@fontsource/roboto/index.css';
 
+import { FontsEnum } from '@vladyslav.haiduk_react/client-app';
 import {
-  FontsEnum,
   joinFonts,
   pctToFloat,
   pxToRem,
-} from '@vladyslav.haiduk_react/client-app';
+} from '@vladyslav.haiduk_react/shared/utils';
 
 export const theme = createTheme({
   typography: {
