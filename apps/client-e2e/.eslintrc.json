@@ -4,7 +4,9 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        "react/jsx-max-props-per-line": ["off"]
+      }
     },
     {
       "files": ["src/plugins/index.js"],

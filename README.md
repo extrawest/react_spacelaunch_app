@@ -39,20 +39,50 @@ Message rules for this project: [conventional-changelog/commitlint](https://gith
 #### Project Scripts (from package.json)
 
 ```bash
-# Start development server for client app
+# Start development server for default app
 yarn start
 
-# Build client app for production
+# Build default app for production
 yarn build
 
-# Run unit tests for client app
+# Run unit tests for default app
 yarn test
 
-# Lint code for client app
+# Lint code for default app
 yarn lint
 
-# Deploy client app to live
-yarn deploy:live
+# Run end-to-end tests for default app
+yarn e2e
+
+# Start development server for client app
+yarn start:client
+
+# Build client app for production
+yarn build:client
+
+# Run unit tests for client app
+yarn test:client
+
+# Lint code for client app
+yarn lint:client
+
+# Run end-to-end tests for client app
+yarn e2e:client
+
+# Run unit tests for all apps and libs
+yarn test:all
+
+# Lint code for all apps and libs
+yarn lint:all
+
+# Update all Nx plugins and generate migrations.json file
+yarn migrate
+
+# Run migrations.json to tweak your code
+yarn migrations:run
+
+# Build and deploy client app to live
+yarn deploy:client:live
 ```
 
 #### Nx CLI Cheat Sheet
