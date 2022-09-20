@@ -16,7 +16,8 @@
     "importsNotUsedAsValues": "error",
     "baseUrl": ".",
     "paths": {
-      "@vladyslav.haiduk_react/client-app": ["libs/client-app/src/index.ts"]
+      "@vladyslav.haiduk_react/client-app": ["libs/client-app/src/index.ts"],
+      "@vladyslav.haiduk_react/shared/utils": ["libs/shared/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -7,8 +7,17 @@
     "build": "nx build",
     "test": "nx test",
     "lint": "nx lint",
-    "deploy:live": "nx build && firebase deploy --only hosting",
-    "husky:prepare": "husky install"
+    "e2e": "nx e2e --watch",
+    "start:client": "nx serve client",
+    "build:client": "nx build client",
+    "test:client": "nx text client",
+    "lint:client": "nx lint client",
+    "e2e:client": "nx e2e client-e2e --watch",
+    "test:all": "nx run-many --target=test --all",
+    "lint:all": "nx run-many --target=lint --all",
+    "migrate": "nx migrate latest",
+    "migrations:run": "nx migrate --run-migrations=migrations.json",
+    "deploy:client:live": "nx build client && firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {
@@ -28,15 +37,15 @@
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@emotion/babel-plugin": "11.10.2",
-    "@nrwl/cli": "14.7.5",
-    "@nrwl/cypress": "14.7.5",
-    "@nrwl/eslint-plugin-nx": "14.7.5",
-    "@nrwl/jest": "14.7.5",
-    "@nrwl/linter": "14.7.5",
-    "@nrwl/nx-cloud": "latest",
-    "@nrwl/react": "14.7.5",
-    "@nrwl/web": "14.7.5",
-    "@nrwl/workspace": "14.7.5",
+    "@nrwl/cli": "14.7.6",
+    "@nrwl/cypress": "14.7.6",
+    "@nrwl/eslint-plugin-nx": "14.7.6",
+    "@nrwl/jest": "14.7.6",
+    "@nrwl/linter": "14.7.6",
+    "@nrwl/nx-cloud": "14.6.2",
+    "@nrwl/react": "14.7.6",
+    "@nrwl/web": "14.7.6",
+    "@nrwl/workspace": "14.7.6",
     "@testing-library/react": "13.3.0",
     "@types/jest": "28.1.1",
     "@types/node": "16.11.7",
@@ -57,7 +66,7 @@
     "husky": "^8.0.1",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
-    "nx": "14.7.5",
+    "nx": "14.7.6",
     "prettier": "^2.6.2",
     "react-test-renderer": "18.2.0",
     "ts-jest": "28.0.5",
@@ -65,3 +74,4 @@
     "typescript": "~4.8.2"
   }
 }
+
