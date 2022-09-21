@@ -1,12 +1,7 @@
-import { Stack, Typography } from '@mui/material';
+import { RocketContainer } from '@vladyslav.haiduk_react/client-app';
 
 const RocketPage = () => {
-  return (
-    <Stack>
-      <Typography variant="h1">Rocket Page</Typography>
-      <Typography variant="body1">Some description</Typography>
-    </Stack>
-  );
+  return <RocketContainer />;
 };
 
 export default RocketPage;

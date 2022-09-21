@@ -1,12 +1,7 @@
-import { Stack, Typography } from '@mui/material';
+import { NotFoundContainer } from '@vladyslav.haiduk_react/client-app';
 
 const NotFoundPage = () => {
-  return (
-    <Stack>
-      <Typography variant="h1">Not Found Page</Typography>
-      <Typography variant="body1">Some description</Typography>
-    </Stack>
-  );
+  return <NotFoundContainer />;
 };
 
 export default NotFoundPage;
