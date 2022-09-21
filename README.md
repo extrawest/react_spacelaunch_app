@@ -45,6 +45,9 @@ yarn start
 # Build default app for production
 yarn build
 
+# Create service-worker.js for client app (automatically run after build)
+yarn postbuild
+
 # Run unit tests for default app
 yarn test
 
@@ -53,21 +56,6 @@ yarn lint
 
 # Run end-to-end tests for default app
 yarn e2e
-
-# Start development server for client app
-yarn start:client
-
-# Build client app for production
-yarn build:client
-
-# Run unit tests for client app
-yarn test:client
-
-# Lint code for client app
-yarn lint:client
-
-# Run end-to-end tests for client app
-yarn e2e:client
 
 # Run unit tests for all apps and libs
 yarn test:all
