@@ -14,4 +14,4 @@ root.render(
   </StrictMode>
 );
 
-registerSW('serviceWorker.js');
+registerSW('service-worker.js');
