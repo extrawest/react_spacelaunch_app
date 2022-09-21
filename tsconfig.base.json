@@ -14,6 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "importsNotUsedAsValues": "error",
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "@vladyslav.haiduk_react/client-app": ["libs/client-app/src/index.ts"],

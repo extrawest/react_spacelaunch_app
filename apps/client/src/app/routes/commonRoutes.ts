@@ -3,7 +3,7 @@ import { lazy } from 'react';
 import type { RouteParams } from '@vladyslav.haiduk_react/client-app';
 import { RoutesEnum } from '@vladyslav.haiduk_react/client-app';
 
-const MainPage = lazy(() => import('../pages/Main/Main'));
+const HomePage = lazy(() => import('../pages/Home/Home'));
 const LaunchPage = lazy(() => import('../pages/Launch/Launch'));
 const RocketPage = lazy(() => import('../pages/Rocket/Rocket'));
 const EventPage = lazy(() => import('../pages/Event/Event'));
@@ -11,8 +11,8 @@ const NotFoundPage = lazy(() => import('../pages/NotFound/NotFound'));
 
 export const commonRoutes: RouteParams[] = [
   {
-    path: RoutesEnum.Main,
-    element: MainPage,
+    path: RoutesEnum.Home,
+    element: HomePage,
   },
   {
     path: RoutesEnum.Launch,
