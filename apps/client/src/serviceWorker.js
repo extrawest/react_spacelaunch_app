@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-const CACHE_NAME = 'offline-v-1';
+const CACHE_NAME = 'offline-v-2';
 const OFFLINE_TMPL_URL = 'index.html';
 
 self.addEventListener('install', (event) => {
@@ -23,7 +23,10 @@ self.addEventListener('fetch', (event) => {
             return preloadResponse;
           }
 
-          return await fetch(event.request);
+          const fetchedResponse = await fetch(event.request);
+          const cache = await caches.open(CACHE_NAME);
+          await cache.put(event.request, fetchedResponse.clone());
+          return fetchedResponse;
         } catch (error) {
           const cache = await caches.open(CACHE_NAME);
           return await cache.match(OFFLINE_TMPL_URL);
