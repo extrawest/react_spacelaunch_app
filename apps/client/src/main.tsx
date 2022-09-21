@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 
-import { registerSW } from '@vladyslav.haiduk_react/shared/utils';
+import { registerServiceWorker } from '@vladyslav.haiduk_react/client-app';
 
 import App from './app/App';
 
@@ -14,4 +14,4 @@ root.render(
   </StrictMode>
 );
 
-registerSW('service-worker.js');
+registerServiceWorker();
