@@ -13,3 +13,5 @@ export const initStore = () => {
 };
 
 export const store = initStore();
+
+export * from './api';
