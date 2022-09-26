@@ -99,3 +99,14 @@ theme.typography.caption = {
   lineHeight: pctToFloat(100),
   color: theme.palette.text.colorful,
 };
+
+theme.components = {
+  MuiContainer: {
+    styleOverrides: {
+      root: {
+        paddingLeft: `${theme.spacing(1.25)} !important`,
+        paddingRight: `${theme.spacing(1.25)} !important`,
+      },
+    },
+  },
+};

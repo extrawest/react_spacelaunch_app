@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import i18next from 'i18next';
 import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
 
+import { NamespacesEnum } from '../types/enums';
 import { enResource } from './en';
 
 export const initI18n = () => {
@@ -14,6 +15,8 @@ export const initI18n = () => {
         en: enResource,
       },
       fallbackLng: 'en',
+      defaultNS: NamespacesEnum.Common,
+      fallbackNS: NamespacesEnum.Common,
       interpolation: {
         escapeValue: false,
       },

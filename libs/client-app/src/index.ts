@@ -1,3 +1,4 @@
+export * from './lib/assets/images';
 export * from './lib/components/ui';
 export * from './lib/containers';
 export * from './lib/i18n';
