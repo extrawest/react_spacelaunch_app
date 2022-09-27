@@ -1,8 +1,7 @@
-import type { SxProps, Theme } from '@mui/material';
-
+import type { StylesWithOptionsAndTheme } from '../../../types/interfaces';
 import type { ChipStylesOptions } from './CustomChip.types';
 
-const chip: (options: ChipStylesOptions) => SxProps<Theme> =
+const chip: StylesWithOptionsAndTheme<ChipStylesOptions> =
   ({ gradient }) =>
   (theme) => ({
     ...theme.typography.caption,

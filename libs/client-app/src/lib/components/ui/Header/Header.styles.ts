@@ -1,6 +1,7 @@
 import type { SxProps, Theme } from '@mui/material';
 import { alpha } from '@mui/material';
 
+import type { StylesWithOptions } from '../../../types/interfaces';
 import type { LogoStylesOptions } from './Header.types';
 
 const wrapper: SxProps<Theme> = (theme) => ({
@@ -33,7 +34,7 @@ const homeLink: SxProps<Theme> = (theme) => ({
   },
 });
 
-const logo: (options: LogoStylesOptions) => SxProps = ({ centered }) => ({
+const logo: StylesWithOptions<LogoStylesOptions> = ({ centered }) => ({
   position: 'absolute',
   top: centered ? '50%' : '70%',
   right: centered ? '50%' : 0,

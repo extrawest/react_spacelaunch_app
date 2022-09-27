@@ -1,8 +1,7 @@
-import type { SxProps } from '@mui/material';
-
+import type { StylesWithOptions } from '../../../types/interfaces';
 import type { WrapperStylesOptions } from './Intro.types';
 
-const wrapper: (options: WrapperStylesOptions) => SxProps = ({ image }) => ({
+const wrapper: StylesWithOptions<WrapperStylesOptions> = ({ image }) => ({
   width: '100%',
   minHeight: 1080,
   pt: 41.25,
