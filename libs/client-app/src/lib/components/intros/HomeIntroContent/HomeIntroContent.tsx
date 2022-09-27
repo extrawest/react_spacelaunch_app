@@ -15,15 +15,15 @@ export const HomeIntroContent = () => {
         variant="h1"
         sx={styles.title}
       >
-        {t('title')}
+        {t('home:title')}
       </Typography>
       <Typography
         variant="body2"
         sx={styles.description}
       >
-        {t('description')}
+        {t('home:description')}
       </Typography>
-      <CustomButton>{t('show_launches')}</CustomButton>
+      <CustomButton>{t('home:show_launches')}</CustomButton>
     </Stack>
   );
 };

@@ -14,7 +14,6 @@ import { HomeIntroContent } from '../../components/intros';
 import { Meta } from '../../components/ui';
 import { PageLayout } from '../../layouts';
 import { useGetEventsQuery, useGetLaunchesQuery } from '../../store';
-import type { NormalizedEventDTO, NormalizedLaunchDTO } from '../../types/dto';
 import { NamespacesEnum } from '../../types/enums';
 
 export const HomeContainer = () => {
@@ -28,13 +27,13 @@ export const HomeContainer = () => {
       <Meta title="Home" />
       <PageLayout introChildren={<HomeIntroContent />}>
         <Stack spacing={5}>
-          <Typography variant="h2">{t('events_title')}</Typography>
+          <Typography variant="h2">{t('home:events_title')}</Typography>
           <Stack
             direction="row"
             spacing={2.5}
             sx={{ overflowX: 'scroll' }}
           >
-            {events?.map((event: NormalizedEventDTO) => (
+            {events?.map((event) => (
               <Card
                 key={event.id}
                 sx={{ minWidth: 380 }}
@@ -54,13 +53,13 @@ export const HomeContainer = () => {
         </Stack>
 
         <Stack spacing={5}>
-          <Typography variant="h2">{t('launches_title')}</Typography>
+          <Typography variant="h2">{t('home:launches_title')}</Typography>
           <Stack
             direction="row"
             spacing={2.5}
             sx={{ flexWrap: 'wrap', gapY: 2.5 }}
           >
-            {launches?.map((launch: NormalizedLaunchDTO) => (
+            {launches?.map((launch) => (
               <Card
                 key={launch.id}
                 sx={{ minWidth: '50% - 20px' }}
