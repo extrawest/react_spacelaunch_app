@@ -4,7 +4,7 @@ import { alpha } from '@mui/material';
 import type { LogoStylesOptions } from './Header.types';
 
 const wrapper: SxProps<Theme> = (theme) => ({
-  bgcolor: alpha(theme.palette.common.white, 0.2),
+  bgcolor: alpha(theme.palette.common.black, 0.2),
   boxShadow: 'none',
 });
 
