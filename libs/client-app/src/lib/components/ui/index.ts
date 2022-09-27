@@ -3,3 +3,4 @@ export { Header } from './Header/Header';
 export { Footer } from './Footer/Footer';
 export { Intro } from './Intro/Intro';
 export { EventsCarousel } from './EventsCarousel/EventsCarousel';
+export { LaunchesList } from './LaunchesList/LaunchesList';
