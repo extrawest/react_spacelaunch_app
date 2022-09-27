@@ -1,5 +1,7 @@
 {
   "title": "Upcoming Spaceflight Launches",
   "description": "View all launches available - including launches from the past and utilize powerful search filters.",
-  "show_launches": "Show All Launches"
+  "show_launches": "Show All Launches",
+  "events_title": "Recent Events",
+  "launches_title": "Spaceflight Launches"
 }
