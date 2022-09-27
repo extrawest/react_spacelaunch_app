@@ -7,7 +7,7 @@ const wrapper: SxProps = {
 const content: SxProps = {
   width: 1440,
   mx: 'auto',
-  mt: 20,
+  mt: -14.75,
   mb: 10,
   px: 16,
   py: 12.5,

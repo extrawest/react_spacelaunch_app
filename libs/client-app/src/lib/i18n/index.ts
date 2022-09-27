@@ -15,6 +15,14 @@ export const initI18n = () => {
         en: enResource,
       },
       fallbackLng: 'en',
+      ns: [
+        NamespacesEnum.Common,
+        NamespacesEnum.Home,
+        NamespacesEnum.Launch,
+        NamespacesEnum.Rocket,
+        NamespacesEnum.Event,
+        NamespacesEnum.NotFound,
+      ],
       defaultNS: NamespacesEnum.Common,
       fallbackNS: NamespacesEnum.Common,
       interpolation: {

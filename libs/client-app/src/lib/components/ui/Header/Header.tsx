@@ -24,9 +24,7 @@ export const Header: FC<HeaderProps> = ({ hasBackHome }) => {
               underline="none"
               sx={styles.homeLink}
             >
-              <SvgIcon>
-                <LeftArrowIcon />
-              </SvgIcon>
+              <LeftArrowIcon />
               {t('back_home')}
             </Link>
           )}
