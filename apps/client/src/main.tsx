@@ -1,10 +1,8 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 
-import {
-  registerServiceWorker,
-  initI18n,
-} from '@vladyslav.haiduk_react/client-app';
+import { initI18n } from '@vladyslav.haiduk_react/client-app';
+import { registerWorkboxServiceWorker } from '@vladyslav.haiduk_react/shared/utils';
 
 import App from './app/App';
 
@@ -19,4 +17,4 @@ root.render(
   </StrictMode>
 );
 
-registerServiceWorker();
+registerWorkboxServiceWorker('service-worker.js');

@@ -1,8 +1,6 @@
 import { Workbox } from 'workbox-window';
 
-export const registerServiceWorker = async () => {
-  const swPath = 'service-worker.js';
-
+export const registerWorkboxServiceWorker = async (swPath: string) => {
   if (process.env.NODE_ENV !== 'production') {
     return console.warn(
       `[SW ${swPath}]: can't be registered in development mode`

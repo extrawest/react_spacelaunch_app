@@ -4,8 +4,7 @@ import { Link as RouteLink } from 'react-router-dom';
 
 import { AppBar, Container, Link, SvgIcon, Toolbar } from '@mui/material';
 
-import { LeftArrowIcon } from '../../../assets/icons';
-import { LogoSvgImage } from '../../../assets/images';
+import { LeftArrowIcon, LogoIcon } from '../../../assets/icons';
 import { RoutesEnum } from '../../../types/enums';
 import { styles } from './Header.styles';
 import type { HeaderProps } from './Header.types';
@@ -37,7 +36,7 @@ export const Header: FC<HeaderProps> = ({ hasBackHome }) => {
               centered: !hasBackHome,
             })}
           >
-            <LogoSvgImage />
+            <LogoIcon />
           </SvgIcon>
         </Toolbar>
       </Container>

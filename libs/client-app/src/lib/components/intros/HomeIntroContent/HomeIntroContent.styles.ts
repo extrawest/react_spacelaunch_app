@@ -10,6 +10,7 @@ const title: SxProps = {
 
 const description: SxProps = {
   mb: 6.25,
+  maxWidth: 595,
 };
 
 export const styles = {

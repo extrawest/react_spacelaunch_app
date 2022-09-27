@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Container, SvgIcon, Typography } from '@mui/material';
 
-import { LogoSvgImage } from '../../../assets/images';
+import { LogoIcon } from '../../../assets/icons';
 import { styles } from './Footer.styles';
 
 export const Footer = () => {
@@ -14,7 +14,7 @@ export const Footer = () => {
       sx={styles.container}
     >
       <SvgIcon sx={styles.logo}>
-        <LogoSvgImage />
+        <LogoIcon />
       </SvgIcon>
 
       <Typography variant="body2">{t('copyright')}</Typography>
