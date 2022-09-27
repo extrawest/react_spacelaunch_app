@@ -19,9 +19,15 @@ const homeLink: SxProps<Theme> = (theme) => ({
   alignItems: 'center',
   gap: 1.25,
   color: 'text.colorful',
+  fontWeight: 600,
   transitionProperty: 'transform',
   transitionDuration: `${theme.transitions.duration.shortest}ms`,
   transitionTimingFunction: theme.transitions.easing.easeInOut,
+  '& > svg': {
+    width: 28,
+    height: 28,
+    fill: theme.palette.common.white,
+  },
   '&:hover': {
     transform: 'translateY(-1px)',
   },
