@@ -1,12 +1,7 @@
-import { Stack, Typography } from '@mui/material';
+import { EventContainer } from '@vladyslav.haiduk_react/client-app';
 
 const EventPage = () => {
-  return (
-    <Stack>
-      <Typography variant="h1">Event Page</Typography>
-      <Typography variant="body1">Some description</Typography>
-    </Stack>
-  );
+  return <EventContainer />;
 };
 
 export default EventPage;

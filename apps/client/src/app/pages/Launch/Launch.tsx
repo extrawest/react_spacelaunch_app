@@ -1,12 +1,7 @@
-import { Stack, Typography } from '@mui/material';
+import { LaunchContainer } from '@vladyslav.haiduk_react/client-app';
 
 const LaunchPage = () => {
-  return (
-    <Stack>
-      <Typography variant="h1">Launch Page</Typography>
-      <Typography variant="body1">Some description</Typography>
-    </Stack>
-  );
+  return <LaunchContainer />;
 };
 
 export default LaunchPage;

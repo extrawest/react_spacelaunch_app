@@ -1,5 +1,5 @@
 export const enum RoutesEnum {
-  Main = '/',
+  Home = '/',
   Launch = '/launch',
   Rocket = '/rocket',
   Event = '/event',

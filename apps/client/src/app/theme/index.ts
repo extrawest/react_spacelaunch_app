@@ -1,7 +1,9 @@
 import { createTheme } from '@mui/material';
 
-import '@fontsource/montserrat/index.css';
-import '@fontsource/roboto/index.css';
+import '@fontsource/montserrat/500-italic.css';
+import '@fontsource/montserrat/700.css';
+import '@fontsource/montserrat/800.css';
+import '@fontsource/roboto/400.css';
 
 import { FontsEnum } from '@vladyslav.haiduk_react/client-app';
 import {
@@ -98,4 +100,15 @@ theme.typography.caption = {
   fontStyle: 'italic',
   lineHeight: pctToFloat(100),
   color: theme.palette.text.colorful,
+};
+
+theme.components = {
+  MuiContainer: {
+    styleOverrides: {
+      root: {
+        paddingLeft: `${theme.spacing(1.25)} !important`,
+        paddingRight: `${theme.spacing(1.25)} !important`,
+      },
+    },
+  },
 };
