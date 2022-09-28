@@ -12,7 +12,7 @@ import {
 
 import { EmptyImage } from '../../../../assets/images';
 import { RoutesObj } from '../../../../types/constants';
-import { formatDate } from '../../../../utils';
+import { formatDate, getLaunchImage } from '../../../../utils';
 import { CustomChip } from '../../../common';
 import { styles } from './LaunchCard.styles';
 import type { LaunchCardProps } from './LaunchCard.types';
@@ -28,7 +28,7 @@ export const LaunchCard: FC<LaunchCardProps> = ({ launch }) => {
         <CardMedia
           component="img"
           height={324}
-          image={launch.image ?? EmptyImage}
+          image={getLaunchImage(launch) ?? EmptyImage}
         />
         <CardContent sx={styles.cardContent}>
           <Box sx={styles.chipWrapper}>

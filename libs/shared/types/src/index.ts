@@ -1,1 +1,1 @@
-export * from './lib/types';
+export { Nullable } from './lib/utility';

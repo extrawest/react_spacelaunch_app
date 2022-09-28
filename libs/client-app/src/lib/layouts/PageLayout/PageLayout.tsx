@@ -15,9 +15,11 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
     <Box sx={styles.wrapper}>
       <Header hasBackHome={hasBackHome} />
       {intro}
-      <Paper sx={styles.content}>
-        <Stack spacing={12.5}>{children}</Stack>
-      </Paper>
+      <Box sx={styles.contentWrapper}>
+        <Paper sx={styles.content}>
+          <Stack spacing={12.5}>{children}</Stack>
+        </Paper>
+      </Box>
       <Footer />
     </Box>
   );

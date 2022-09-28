@@ -1,15 +1,18 @@
 import { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { RoutesObj } from '@vladyslav.haiduk_react/client-app';
+import { RoutesObj, Spinner } from '@vladyslav.haiduk_react/client-app';
+import { useResetPageScroll } from '@vladyslav.haiduk_react/shared/hooks';
 
 import { commonRoutes } from './commonRoutes';
 
 export const Routing = () => {
+  useResetPageScroll();
+
   const routes = [...commonRoutes];
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Spinner />}>
       <Routes>
         {routes.map((route) => (
           <Route
