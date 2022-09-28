@@ -33,7 +33,7 @@ export const LaunchCard: FC<LaunchCardProps> = ({ launch }) => {
         <CardContent sx={styles.cardContent}>
           <Box sx={styles.chipWrapper}>
             <CustomChip
-              label={formatDate(launch.date)}
+              label={formatDate(launch.window_start)}
               gradient
             />
           </Box>

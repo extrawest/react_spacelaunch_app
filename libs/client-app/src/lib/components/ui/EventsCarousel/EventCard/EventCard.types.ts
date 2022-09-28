@@ -1,5 +1,5 @@
-import type { NormalizedEventDTO } from '../../../../types/dto';
+import type { EventDTO } from '../../../../types/dto';
 
 export interface EventCardProps {
-  event: NormalizedEventDTO;
+  event: EventDTO;
 }

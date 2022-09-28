@@ -26,7 +26,7 @@ export const EventCard: FC<EventCardProps> = ({ event }) => {
       >
         <CardMedia
           component="img"
-          image={event.image ?? EmptyImage}
+          image={event.feature_image ?? EmptyImage}
           height={264}
         />
         <CardContent sx={styles.cardContent}>

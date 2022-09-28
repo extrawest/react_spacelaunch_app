@@ -1,10 +1,3 @@
-export interface NormalizedEventDTO {
-  id: EventDTO['id'];
-  name: EventDTO['name'];
-  image: EventDTO['feature_image'];
-  date: EventDTO['date'];
-}
-
 export type EventDTO = EventDTONamespace.RootObject;
 
 namespace EventDTONamespace {

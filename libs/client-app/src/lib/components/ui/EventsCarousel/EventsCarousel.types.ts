@@ -1,7 +1,7 @@
-import type { NormalizedEventDTO } from '../../../types/dto';
+import type { EventDTO } from '../../../types/dto';
 
 export interface EventsCarouselProps {
   title: string;
-  events?: NormalizedEventDTO[];
+  events?: EventDTO[];
   loading: boolean;
 }
