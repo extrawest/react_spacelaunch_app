@@ -14,6 +14,7 @@ import {
 
 import { LaunchIntroImage } from '../../../assets/images';
 import { NamespacesEnum } from '../../../types/enums';
+import { getLaunchImage } from '../../../utils';
 import { Intro } from '../../ui';
 import { styles } from './LaunchIntro.styles';
 import type { LaunchIntroContentProps } from './LaunchIntro.types';
@@ -29,7 +30,7 @@ export const LaunchIntro: FC<LaunchIntroContentProps> = ({ launch }) => {
 
   return (
     <Intro
-      bgimage={launch.image ?? LaunchIntroImage}
+      bgimage={getLaunchImage(launch) ?? LaunchIntroImage}
       hasGradient
     >
       <Stack sx={styles.wrapper}>
