@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 
 import type { RouteParams } from '@vladyslav.haiduk_react/client-app';
-import { RoutesEnum } from '@vladyslav.haiduk_react/client-app';
+import { RoutesObj } from '@vladyslav.haiduk_react/client-app';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const LaunchPage = lazy(() => import('../pages/Launch/Launch'));
@@ -11,23 +11,23 @@ const NotFoundPage = lazy(() => import('../pages/NotFound/NotFound'));
 
 export const commonRoutes: RouteParams[] = [
   {
-    path: RoutesEnum.Home,
+    path: RoutesObj.Home,
     element: HomePage,
   },
   {
-    path: RoutesEnum.Launch,
+    path: `${RoutesObj.Launch()}/:id`,
     element: LaunchPage,
   },
   {
-    path: RoutesEnum.Rocket,
+    path: `${RoutesObj.Rocket()}/:id`,
     element: RocketPage,
   },
   {
-    path: RoutesEnum.Event,
+    path: `${RoutesObj.Event()}/:id`,
     element: EventPage,
   },
   {
-    path: RoutesEnum.NotFound,
+    path: RoutesObj.NotFound,
     element: NotFoundPage,
   },
 ];

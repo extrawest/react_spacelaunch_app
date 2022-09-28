@@ -1,9 +1,26 @@
-import type { SxProps } from '@mui/material';
+import type { SxProps, Theme } from '@mui/material';
+import { cardActionAreaClasses } from '@mui/material';
 
 const card: SxProps = {
+  bgcolor: 'transparent',
   borderRadius: 0,
   boxShadow: 0,
 };
+
+const cardActionArea: SxProps<Theme> = (theme) => ({
+  transitionProperty: 'transform',
+  transitionDuration: `${theme.transitions.duration.short}ms`,
+  transitionTimingFunction: theme.transitions.easing.easeInOut,
+  [`& .${cardActionAreaClasses.focusHighlight}`]: {
+    background: 'transparent',
+  },
+  '&:hover': {
+    transform: 'scale(0.985)',
+  },
+  '&:focus': {
+    transform: 'scale(0.985)',
+  },
+});
 
 const cardContent: SxProps = {
   p: 0,
@@ -16,4 +33,4 @@ const cardContent: SxProps = {
   },
 };
 
-export const styles = { card, cardContent };
+export const styles = { card, cardActionArea, cardContent };

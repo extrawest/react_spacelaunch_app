@@ -5,7 +5,7 @@ import { Link as RouteLink } from 'react-router-dom';
 import { AppBar, Container, Link, SvgIcon, Toolbar } from '@mui/material';
 
 import { LeftArrowIcon, LogoIcon } from '../../../assets/icons';
-import { RoutesEnum } from '../../../types/enums';
+import { RoutesObj } from '../../../types/constants';
 import { styles } from './Header.styles';
 import type { HeaderProps } from './Header.types';
 
@@ -19,7 +19,7 @@ export const Header: FC<HeaderProps> = ({ hasBackHome }) => {
           {hasBackHome && (
             <Link
               component={RouteLink}
-              to={RoutesEnum.Home}
+              to={RoutesObj.Home}
               variant="subtitle1"
               underline="none"
               sx={styles.homeLink}

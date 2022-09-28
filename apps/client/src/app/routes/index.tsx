@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { RoutesEnum } from '@vladyslav.haiduk_react/client-app';
+import { RoutesObj } from '@vladyslav.haiduk_react/client-app';
 
 import { commonRoutes } from './commonRoutes';
 
@@ -20,7 +20,7 @@ export const Routing = () => {
         ))}
         <Route
           path="*"
-          element={<Navigate to={RoutesEnum.NotFound} />}
+          element={<Navigate to={RoutesObj.NotFound} />}
         />
       </Routes>
     </Suspense>
