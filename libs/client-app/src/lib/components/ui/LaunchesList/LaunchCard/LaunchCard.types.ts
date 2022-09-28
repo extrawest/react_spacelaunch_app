@@ -1,5 +1,5 @@
-import type { NormalizedLaunchDTO } from '../../../../types/dto';
+import type { LaunchDTO } from '../../../../types/dto';
 
 export interface LaunchCardProps {
-  launch: NormalizedLaunchDTO;
+  launch: LaunchDTO;
 }

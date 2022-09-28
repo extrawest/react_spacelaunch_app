@@ -1,20 +1,17 @@
-import type { NormalizedLaunchDTO } from '../../../types/dto';
+import type { LaunchDTO } from '../../../types/dto';
 import { api } from '../api';
 import type { GetLaunchesResponseData } from './types';
 
 const launchesApi = api.injectEndpoints({
   endpoints: (build) => ({
-    getLaunches: build.query<NormalizedLaunchDTO[], void>({
+    getLaunches: build.query<LaunchDTO[], void>({
       query: () => 'launch/upcoming?mode=detailed',
-      transformResponse: (data: GetLaunchesResponseData) =>
-        data.results.map((launch) => ({
-          id: launch.id,
-          name: launch.name,
-          image: launch.image_url,
-          date: launch.window_start,
-        })),
+      transformResponse: (data: GetLaunchesResponseData) => data.results,
+    }),
+    getLaunchById: build.query<LaunchDTO, LaunchDTO['id']>({
+      query: (id) => `launch/${id}`,
     }),
   }),
 });
 
-export const { useGetLaunchesQuery } = launchesApi;
+export const { useGetLaunchesQuery, useGetLaunchByIdQuery } = launchesApi;

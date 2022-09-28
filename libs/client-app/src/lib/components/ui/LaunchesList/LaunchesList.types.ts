@@ -1,7 +1,7 @@
-import type { NormalizedLaunchDTO } from '../../../types/dto';
+import type { LaunchDTO } from '../../../types/dto';
 
 export interface LaunchesListProps {
   title: string;
-  launches?: NormalizedLaunchDTO[];
+  launches?: LaunchDTO[];
   loading: boolean;
 }

@@ -32,6 +32,9 @@ const homeLink: SxProps<Theme> = (theme) => ({
   '&:hover': {
     transform: 'translateY(-1px)',
   },
+  '&:focus': {
+    transform: 'translateY(-1px)',
+  },
 });
 
 const logo: StylesWithOptions<LogoStylesOptions> = ({ centered }) => ({

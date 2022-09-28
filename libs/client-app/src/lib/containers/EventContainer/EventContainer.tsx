@@ -1,5 +1,9 @@
+import { useParams } from 'react-router-dom';
+
 import { Meta } from '../../components/ui';
 
 export const EventContainer = () => {
-  return <Meta title="Event" />;
+  const { id } = useParams();
+
+  return <Meta title={id ? id.toString() : 'Event'} />;
 };

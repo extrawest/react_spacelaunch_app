@@ -1,15 +1,18 @@
 import { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { RoutesEnum } from '@vladyslav.haiduk_react/client-app';
+import { RoutesObj, Spinner } from '@vladyslav.haiduk_react/client-app';
+import { useResetPageScroll } from '@vladyslav.haiduk_react/shared/hooks';
 
 import { commonRoutes } from './commonRoutes';
 
 export const Routing = () => {
+  useResetPageScroll();
+
   const routes = [...commonRoutes];
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Spinner />}>
       <Routes>
         {routes.map((route) => (
           <Route
@@ -20,7 +23,7 @@ export const Routing = () => {
         ))}
         <Route
           path="*"
-          element={<Navigate to={RoutesEnum.NotFound} />}
+          element={<Navigate to={RoutesObj.NotFound} />}
         />
       </Routes>
     </Suspense>

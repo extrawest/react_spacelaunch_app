@@ -7,10 +7,13 @@ import type { IntroProps } from './Intro.types';
 
 export const Intro: FC<PropsWithChildren<IntroProps>> = ({
   bgimage,
+  hasGradient,
   children,
 }) => {
   return (
-    <Box sx={styles.wrapper({ image: bgimage })}>
+    <Box
+      sx={styles.wrapper({ image: bgimage, gradient: Boolean(hasGradient) })}
+    >
       <Container>{children}</Container>
     </Box>
   );

@@ -1,3 +1,3 @@
 export { api } from './api';
 export { useGetEventsQuery } from './events';
-export { useGetLaunchesQuery } from './launches';
+export { useGetLaunchesQuery, useGetLaunchByIdQuery } from './launches';

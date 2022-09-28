@@ -1,2 +1,2 @@
-export type { NormalizedEventDTO, EventDTO } from './event';
-export type { NormalizedLaunchDTO, LaunchDTO } from './launch';
+export type { EventDTO } from './event';
+export type { LaunchDTO } from './launch';
