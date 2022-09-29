@@ -1,4 +1,4 @@
-export { Meta } from './Meta/Meta';
+export { MetaData } from './MetaData/MetaData';
 export { Header } from './Header/Header';
 export { Footer } from './Footer/Footer';
 export { Intro } from './Intro/Intro';

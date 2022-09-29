@@ -22,6 +22,7 @@
     "@fontsource/montserrat": "^4.5.12",
     "@fontsource/roboto": "^4.5.8",
     "@mui/material": "^5.10.5",
+    "@react-google-maps/api": "^2.13.1",
     "@reduxjs/toolkit": "^1.8.5",
     "core-js": "^3.6.5",
     "dayjs": "^1.11.5",

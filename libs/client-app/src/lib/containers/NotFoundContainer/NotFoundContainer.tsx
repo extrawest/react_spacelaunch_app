@@ -1,5 +1,5 @@
-import { Meta } from '../../components/ui';
+import { MetaData } from '../../components/ui';
 
 export const NotFoundContainer = () => {
-  return <Meta title="Not Found" />;
+  return <MetaData title="Not Found" />;
 };

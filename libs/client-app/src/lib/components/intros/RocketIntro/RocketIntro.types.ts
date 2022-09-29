@@ -1,5 +1,5 @@
 import type { RocketDTO } from '../../../types/dto';
 
-export interface RocketInfoProps {
+export interface RocketIntroProps {
   rocket: RocketDTO;
 }
