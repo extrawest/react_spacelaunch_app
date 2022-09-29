@@ -1,5 +1,5 @@
-import type { LaunchDTO } from '../../../types/dto';
+import type { RocketDTO } from '../../../types/dto';
 
 export interface RocketInfoProps {
-  rocket: LaunchDTO['rocket'];
+  rocket: RocketDTO;
 }

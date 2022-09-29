@@ -34,10 +34,10 @@ export const LaunchContainer = () => {
       >
         {videoId && <YouTubeVideo videoId={videoId} />}
         <LaunchInfo launch={data} />
-        <RocketInfo rocket={data.rocket} />
+        <RocketInfo rocket={data.rocket.configuration} />
         <Map
-          lat={parseInt(data.pad.latitude)}
-          lng={parseInt(data.pad.longitude)}
+          lat={Number(data.pad.latitude)}
+          lng={Number(data.pad.longitude)}
         />
       </PageLayout>
     </>

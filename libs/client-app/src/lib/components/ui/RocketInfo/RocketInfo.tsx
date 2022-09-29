@@ -16,7 +16,7 @@ export const RocketInfo: FC<RocketInfoProps> = ({ rocket }) => {
   const navigate = useNavigate();
 
   const handleOpenRocketDetails = useCallback(() => {
-    navigate(RoutesObj.Rocket(rocket.configuration.id));
+    navigate(RoutesObj.Rocket(rocket.id));
   }, [navigate, rocket]);
 
   return (
@@ -25,15 +25,13 @@ export const RocketInfo: FC<RocketInfoProps> = ({ rocket }) => {
         variant="h2"
         sx={styles.title}
       >
-        {rocket.configuration.full_name}
+        {rocket.full_name}
       </Typography>
       <Stack spacing={0.625}>
-        <PropertyValue property="Family">
-          {rocket.configuration.family}
-        </PropertyValue>
-        {rocket.configuration.variant && (
+        <PropertyValue property="Family">{rocket.family}</PropertyValue>
+        {rocket.variant && (
           <PropertyValue property="Configuration">
-            {rocket.configuration.variant}
+            {rocket.variant}
           </PropertyValue>
         )}
       </Stack>
@@ -41,7 +39,7 @@ export const RocketInfo: FC<RocketInfoProps> = ({ rocket }) => {
         variant="body2"
         sx={styles.description}
       >
-        {rocket.configuration.description}
+        {rocket.description}
       </Typography>
       <CustomButton onClick={handleOpenRocketDetails}>
         {t('launch:open_rocket_details')}
