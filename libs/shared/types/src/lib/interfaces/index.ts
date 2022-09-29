@@ -1,2 +1,2 @@
-export { StylesWithOptions, StylesWithOptionsAndTheme } from './styles';
-export { Nullable } from './utility';
+export type { StylesWithOptions, StylesWithOptionsAndTheme } from './styles';
+export type { Nullable } from './utility';
