@@ -1,6 +1,8 @@
 import { Navigate, useParams } from 'react-router-dom';
 
-import { Spinner } from '../../components/common';
+import { getUrlSearchParam } from '@vladyslav.haiduk_react/shared/utils';
+
+import { Spinner, YouTubeVideo } from '../../components/common';
 import { LaunchIntro } from '../../components/intros';
 import { LaunchInfo, Meta, RocketInfo } from '../../components/ui';
 import { PageLayout } from '../../layouts';
@@ -20,6 +22,9 @@ export const LaunchContainer = () => {
     return <Navigate to={RoutesObj.NotFound} />;
   }
 
+  const videoId =
+    data.vidURLs.length > 0 ? getUrlSearchParam(data.vidURLs[0], 'v') : null;
+
   return (
     <>
       <Meta title={data.name} />
@@ -27,6 +32,7 @@ export const LaunchContainer = () => {
         hasBackHome
         intro={<LaunchIntro launch={data} />}
       >
+        {videoId && <YouTubeVideo videoId={videoId} />}
         <LaunchInfo launch={data} />
         <RocketInfo rocket={data.rocket} />
       </PageLayout>
