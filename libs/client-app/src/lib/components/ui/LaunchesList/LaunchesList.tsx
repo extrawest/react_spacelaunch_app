@@ -15,7 +15,10 @@ export const LaunchesList: FC<LaunchesListProps> = ({
   loading,
 }) => {
   return (
-    <Stack spacing={5}>
+    <Stack
+      id="launches-list"
+      spacing={5}
+    >
       <Typography
         variant="h2"
         sx={styles.title}

@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Stack, Typography } from '@mui/material';
@@ -7,8 +8,9 @@ import { NamespacesEnum } from '../../../types/enums';
 import { CustomButton } from '../../common';
 import { Intro } from '../../ui';
 import { styles } from './HomeIntro.styles';
+import type { HomeIntroProps } from './HomeIntro.types';
 
-export const HomeIntro = () => {
+export const HomeIntro: FC<HomeIntroProps> = ({ onShowLaunches }) => {
   const { t } = useTranslation([NamespacesEnum.Home]);
 
   return (
@@ -26,7 +28,9 @@ export const HomeIntro = () => {
         >
           {t('home:description')}
         </Typography>
-        <CustomButton>{t('home:show_launches')}</CustomButton>
+        <CustomButton onClick={onShowLaunches}>
+          {t('home:show_launches')}
+        </CustomButton>
       </Stack>
     </Intro>
   );

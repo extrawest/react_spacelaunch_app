@@ -1,8 +1,11 @@
 import type { FC } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import { Stack, Typography } from '@mui/material';
 
+import { RoutesObj } from '../../../types/constants';
 import { NamespacesEnum } from '../../../types/enums';
 import { CustomButton, PropertyValue } from '../../common';
 import { styles } from './RocketInfo.styles';
@@ -10,6 +13,11 @@ import type { RocketInfoProps } from './RocketInfo.types';
 
 export const RocketInfo: FC<RocketInfoProps> = ({ rocket }) => {
   const { t } = useTranslation([NamespacesEnum.Launch]);
+  const navigate = useNavigate();
+
+  const handleOpenRocketDetails = useCallback(() => {
+    navigate(RoutesObj.Rocket(rocket.configuration.id));
+  }, [navigate, rocket]);
 
   return (
     <Stack sx={styles.wrapper}>
@@ -35,7 +43,9 @@ export const RocketInfo: FC<RocketInfoProps> = ({ rocket }) => {
       >
         {rocket.configuration.description}
       </Typography>
-      <CustomButton>{t('launch:open_rocket_details')}</CustomButton>
+      <CustomButton onClick={handleOpenRocketDetails}>
+        {t('launch:open_rocket_details')}
+      </CustomButton>
     </Stack>
   );
 };
