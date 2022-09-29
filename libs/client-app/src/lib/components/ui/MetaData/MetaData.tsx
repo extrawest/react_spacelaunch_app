@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import { Helmet } from 'react-helmet';
 
-import type { MetaProps } from './Meta.types';
+import type { MetaDataProps } from './MetaData.types';
 
-export const Meta: FC<MetaProps> = ({ title }) => {
+export const MetaData: FC<MetaDataProps> = ({ title }) => {
   return (
     <Helmet>
       <title>{title} | Spacelaunch</title>

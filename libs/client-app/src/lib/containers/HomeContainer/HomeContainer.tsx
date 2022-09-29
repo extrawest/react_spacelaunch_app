@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { HomeIntro } from '../../components/intros';
-import { EventsCarousel, LaunchesList, Meta } from '../../components/ui';
+import { EventsCarousel, LaunchesList, MetaData } from '../../components/ui';
 import { PageLayout } from '../../layouts';
 import { useGetEventsQuery, useGetLaunchesQuery } from '../../store';
 import { NamespacesEnum } from '../../types/enums';
@@ -15,7 +15,7 @@ export const HomeContainer = () => {
 
   return (
     <>
-      <Meta title="Home" />
+      <MetaData title="Home" />
       <PageLayout intro={<HomeIntro />}>
         <EventsCarousel
           title={t('home:events_title')}
