@@ -12,7 +12,7 @@ export const Routing = () => {
   const routes = [...commonRoutes];
 
   return (
-    <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<Spinner variant="fixed" />}>
       <Routes>
         {routes.map((route) => (
           <Route
