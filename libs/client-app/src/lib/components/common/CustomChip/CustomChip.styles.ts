@@ -1,4 +1,5 @@
-import type { StylesWithOptionsAndTheme } from '../../../types/interfaces';
+import type { StylesWithOptionsAndTheme } from '@vladyslav.haiduk_react/shared/types';
+
 import type { ChipStylesOptions } from './CustomChip.types';
 
 const chip: StylesWithOptionsAndTheme<ChipStylesOptions> =

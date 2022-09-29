@@ -1,7 +1,8 @@
 import type { SxProps, Theme } from '@mui/material';
 import { alpha } from '@mui/material';
 
-import type { StylesWithOptions } from '../../../types/interfaces';
+import type { StylesWithOptions } from '@vladyslav.haiduk_react/shared/types';
+
 import type { LogoStylesOptions } from './Header.types';
 
 const wrapper: SxProps<Theme> = (theme) => ({

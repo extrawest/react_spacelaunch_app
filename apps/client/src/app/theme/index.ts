@@ -5,6 +5,7 @@ import '@fontsource/montserrat/600.css';
 import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/800.css';
 import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/700.css';
 
 import { FontsEnum } from '@vladyslav.haiduk_react/client-app';
 import {
