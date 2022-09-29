@@ -5,3 +5,7 @@ export interface EventsCarouselProps {
   events?: EventDTO[];
   loading: boolean;
 }
+
+export interface NavStylesOptions {
+  hidden: boolean;
+}

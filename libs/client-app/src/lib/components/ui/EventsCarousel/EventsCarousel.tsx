@@ -7,10 +7,6 @@ import { A11y, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
-import {
-  boolGuard,
-  undefinedGuard,
-} from '@vladyslav.haiduk_react/shared/types';
 import { range } from '@vladyslav.haiduk_react/shared/utils';
 
 import { LeftArrowIcon, RightArrowIcon } from '../../../assets/icons';
@@ -26,11 +22,11 @@ export const EventsCarousel: FC<EventsCarouselProps> = ({
   events,
   loading,
 }) => {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
 
-  const showNavigation =
-    !loading && events?.length && events.length > SLIDES_PER_VIEW;
+  const hiddenNavigation =
+    loading || !events || events.length <= SLIDES_PER_VIEW;
 
   return (
     <Stack spacing={5}>
@@ -39,25 +35,24 @@ export const EventsCarousel: FC<EventsCarouselProps> = ({
         sx={styles.head}
       >
         <Typography variant="h2">{title}</Typography>
-        {showNavigation && (
-          <Stack
-            direction="row"
-            spacing={3.75}
+        <Stack
+          direction="row"
+          spacing={3.75}
+          sx={styles.nav({ hidden: hiddenNavigation })}
+        >
+          <Button
+            ref={prevRef}
+            sx={styles.navButton}
           >
-            <Button
-              ref={prevRef}
-              sx={styles.navButton}
-            >
-              <LeftArrowIcon />
-            </Button>
-            <Button
-              ref={nextRef}
-              sx={styles.navButton}
-            >
-              <RightArrowIcon />
-            </Button>
-          </Stack>
-        )}
+            <LeftArrowIcon />
+          </Button>
+          <Button
+            ref={nextRef}
+            sx={styles.navButton}
+          >
+            <RightArrowIcon />
+          </Button>
+        </Stack>
       </Stack>
 
       <Swiper
@@ -67,17 +62,6 @@ export const EventsCarousel: FC<EventsCarouselProps> = ({
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
-        }}
-        onBeforeInit={(swiper) => {
-          if (
-            !boolGuard(swiper.params.navigation) &&
-            !undefinedGuard(swiper.params.navigation)
-          ) {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }
         }}
       >
         {loading
