@@ -1,22 +1,18 @@
-import { useTranslation } from 'react-i18next';
 import { Navigate, useParams } from 'react-router-dom';
 
-import { Stack, Typography } from '@mui/material';
+import { getUrlSearchParam } from '@vladyslav.haiduk_react/shared/utils';
 
-import { CustomButton, Spinner } from '../../components/common';
+import { Spinner, YouTubeVideo } from '../../components/common';
 import { LaunchIntro } from '../../components/intros';
-import { Meta } from '../../components/ui';
+import { LaunchInfo, Meta, RocketInfo } from '../../components/ui';
 import { PageLayout } from '../../layouts';
 import { useGetLaunchByIdQuery } from '../../store';
 import { RoutesObj } from '../../types/constants';
-import { NamespacesEnum } from '../../types/enums';
 import type { ParamsData } from './LaunchContainer.types';
 
 export const LaunchContainer = () => {
   const { id } = useParams<ParamsData>();
   const { data, isLoading, isError } = useGetLaunchByIdQuery(id ?? '');
-
-  const { t } = useTranslation([NamespacesEnum.Launch]);
 
   if (isLoading) {
     return <Spinner />;
@@ -26,6 +22,9 @@ export const LaunchContainer = () => {
     return <Navigate to={RoutesObj.NotFound} />;
   }
 
+  const videoId =
+    data.vidURLs.length > 0 ? getUrlSearchParam(data.vidURLs[0], 'v') : null;
+
   return (
     <>
       <Meta title={data.name} />
@@ -33,25 +32,9 @@ export const LaunchContainer = () => {
         hasBackHome
         intro={<LaunchIntro launch={data} />}
       >
-        <Stack sx={{ alignItems: 'center', textAlign: 'center' }}>
-          <Typography variant="h2">Overview</Typography>
-        </Stack>
-
-        <Stack sx={{ alignItems: 'center', textAlign: 'center' }}>
-          <Typography
-            variant="h2"
-            sx={{ mb: 2.5 }}
-          >
-            {data.rocket.configuration.full_name}
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{ mb: 3.75 }}
-          >
-            {data.rocket.configuration.description}
-          </Typography>
-          <CustomButton>{t('launch:open_rocket_details')}</CustomButton>
-        </Stack>
+        {videoId && <YouTubeVideo videoId={videoId} />}
+        <LaunchInfo launch={data} />
+        <RocketInfo rocket={data.rocket} />
       </PageLayout>
     </>
   );

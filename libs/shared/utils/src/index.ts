@@ -5,3 +5,4 @@ export { range } from './lib/range';
 export { registerWorkboxServiceWorker } from './lib/registerWorkboxServiceWorker';
 export { compareDates } from './lib/compareDates';
 export { formatTimeNumber } from './lib/formatTimeNumber';
+export { getUrlSearchParam } from './lib/getUrlSearchParam';

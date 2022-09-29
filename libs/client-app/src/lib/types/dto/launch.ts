@@ -101,7 +101,7 @@ namespace LaunchDTONamespace {
     launch_service_provider?: Nullable<LaunchServiceProvider>;
     manufacturer: RocketManufacturer;
     program: RocketProgram[];
-    variant: string;
+    variant?: Nullable<string>;
     alias: string;
     min_stage: number;
     max_stage: number;
@@ -131,12 +131,12 @@ namespace LaunchDTONamespace {
     flight_proven: boolean;
     serial_number: string;
     status: string;
-    image_url: string;
+    image_url?: Nullable<string>;
     successful_landings: number;
     attempted_landings: number;
     flights: number;
-    last_launch_date: Date;
-    first_launch_date: Date;
+    last_launch_date?: Nullable<Date>;
+    first_launch_date?: Nullable<Date>;
   }
 
   interface Location {
@@ -172,20 +172,176 @@ namespace LaunchDTONamespace {
   interface LauncherStage {
     id: number;
     type: string;
-    reused?: any;
+    reused?: Nullable<boolean>;
     launcher_flight_number: number;
     launcher: Launcher;
     landing: Landing;
-    previous_flight_date: Date;
+    previous_flight_date?: Nullable<Date>;
     turn_around_time_days: number;
-    previous_flight: PreviousFlight;
+    previous_flight?: Nullable<PreviousFlight>;
+  }
+
+  export interface AstronautType {
+    id: number;
+    name: string;
+  }
+
+  export interface AstronautStatus {
+    id: number;
+    name: string;
+  }
+
+  export interface AstronautAgency {
+    id: number;
+    url: string;
+    name: string;
+    type: string;
+  }
+
+  export interface Astronaut {
+    id: number;
+    url: string;
+    name: string;
+    type: AstronautType;
+    status: AstronautStatus;
+    agency: AstronautAgency;
+    date_of_birth: string;
+    date_of_death?: any;
+    nationality: string;
+    twitter: string;
+    instagram: string;
+    bio: string;
+    profile_image: string;
+    wiki: string;
+    last_flight?: Date;
+    first_flight?: Date;
+  }
+
+  export interface LaunchCrew {
+    id: number;
+    role: string;
+    astronaut: Astronaut;
+  }
+
+  export interface Type3 {
+    id: number;
+    name: string;
+  }
+
+  export interface LandingCrewAstronautStatus {
+    id: number;
+    name: string;
+  }
+
+  export interface LandingCrewAstronautAgency {
+    id: number;
+    url: string;
+    name: string;
+    type: string;
+  }
+
+  export interface LandingCrewAstronaut {
+    id: number;
+    url: string;
+    name: string;
+    type: Type3;
+    status: LandingCrewAstronautStatus;
+    agency: LandingCrewAstronautAgency;
+    date_of_birth: string;
+    date_of_death?: any;
+    nationality: string;
+    twitter: string;
+    instagram: string;
+    bio: string;
+    profile_image: string;
+    wiki: string;
+    last_flight?: Date;
+    first_flight?: Date;
+  }
+
+  export interface LandingCrew {
+    id: number;
+    role: string;
+    astronaut: LandingCrewAstronaut;
+  }
+
+  export interface SpacecraftStatus {
+    id: number;
+    name: string;
+  }
+
+  export interface SpacecraftType {
+    id: number;
+    name: string;
+  }
+
+  export interface SpacecraftAgency {
+    id: number;
+    url: string;
+    name: string;
+    featured: boolean;
+    type: string;
+    country_code: string;
+    abbrev: string;
+    description: string;
+    administrator: string;
+    founding_year: string;
+    launchers: string;
+    spacecraft: string;
+    parent?: any;
+    image_url: string;
+  }
+
+  export interface SpacecraftConfig {
+    id: number;
+    url: string;
+    name: string;
+    type: SpacecraftType;
+    agency: SpacecraftAgency;
+    in_use: boolean;
+    capability: string;
+    history: string;
+    details: string;
+    maiden_flight: string;
+    height: number;
+    diameter: number;
+    human_rated: boolean;
+    crew_capacity: number;
+    payload_capacity: number;
+    flight_life: string;
+    image_url: string;
+    nation_url?: any;
+    wiki_link: string;
+    info_link: string;
+  }
+
+  export interface Spacecraft {
+    id: number;
+    url: string;
+    name: string;
+    serial_number: string;
+    status: SpacecraftStatus;
+    description: string;
+    spacecraft_config: SpacecraftConfig;
+  }
+
+  export interface SpacecraftStage {
+    id: number;
+    url: string;
+    mission_end?: any;
+    destination: string;
+    launch_crew: LaunchCrew[];
+    onboard_crew: any[];
+    landing_crew: LandingCrew[];
+    spacecraft: Spacecraft;
+    docking_events: any[];
   }
 
   interface Rocket {
     id?: Nullable<number>;
     configuration: RocketConfiguration;
     launcher_stage: LauncherStage[];
-    spacecraft_stage?: any;
+    spacecraft_stage?: Nullable<SpacecraftStage>;
   }
 
   interface Orbit {
@@ -218,7 +374,7 @@ namespace LaunchDTONamespace {
   interface Pad {
     id: number;
     url?: Nullable<string>;
-    agency_id: number;
+    agency_id?: Nullable<number>;
     name: string;
     info_url?: Nullable<string>;
     wiki_url: string;
@@ -228,6 +384,26 @@ namespace LaunchDTONamespace {
     location: PadLocation;
     map_image?: Nullable<string>;
     total_launch_count?: Nullable<number>;
+  }
+
+  export interface LaunchProgramAgency {
+    id: number;
+    url: string;
+    name: string;
+    type: string;
+  }
+
+  export interface LaunchProgram {
+    id: number;
+    url: string;
+    name: string;
+    description: string;
+    agencies: LaunchProgramAgency[];
+    image_url: string;
+    start_date: Date;
+    end_date?: Nullable<Date>;
+    info_url: string;
+    wiki_url: string;
   }
 
   export interface RootObject {
@@ -259,7 +435,7 @@ namespace LaunchDTONamespace {
     webcast_live?: Nullable<boolean>;
     image?: Nullable<string>;
     infographic?: any;
-    program?: any[];
+    program?: Nullable<LaunchProgram[]>;
     orbital_launch_attempt_count?: Nullable<number>;
     location_launch_attempt_count?: Nullable<number>;
     pad_launch_attempt_count?: Nullable<number>;
