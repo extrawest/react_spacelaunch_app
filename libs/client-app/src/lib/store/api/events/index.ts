@@ -8,7 +8,10 @@ const eventsApi = api.injectEndpoints({
       query: () => 'event/upcoming',
       transformResponse: (data: GetEventsResponseData) => data.results,
     }),
+    getEventById: build.query<EventDTO, EventDTO['id']>({
+      query: (id) => `event/${id}`,
+    }),
   }),
 });
 
-export const { useGetEventsQuery } = eventsApi;
+export const { useGetEventsQuery, useGetEventByIdQuery } = eventsApi;
