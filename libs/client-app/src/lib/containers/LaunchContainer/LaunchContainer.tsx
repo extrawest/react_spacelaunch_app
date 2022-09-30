@@ -16,9 +16,9 @@ import type { ParamsData } from './LaunchContainer.types';
 
 export const LaunchContainer = () => {
   const { id } = useParams<ParamsData>();
-  const { data, isLoading, isError } = useGetLaunchByIdQuery(id ?? '');
+  const { data, isFetching, isError } = useGetLaunchByIdQuery(id ?? '');
 
-  if (isLoading) {
+  if (isFetching) {
     return <Spinner variant="fixed" />;
   }
 

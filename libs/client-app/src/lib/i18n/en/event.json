@@ -1,4 +1,8 @@
 {
   "read_on_site": "Read On Site",
-  "related_info_title": "Related Information"
+  "related_info_title": "Related Information",
+  "other_events_title": "Other Events",
+  "launch_mission_property": "Mission",
+  "launch_mission_type_property": "Mission Type",
+  "launch_location_property": "Location"
 }

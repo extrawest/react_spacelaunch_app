@@ -12,11 +12,11 @@ import { getRocketChips } from './RocketContainer.utils';
 
 export const RocketContainer = () => {
   const { id } = useParams<ParamsData>();
-  const { data, isLoading, isError } = useGetRocketByIdQuery(Number(id));
+  const { data, isFetching, isError } = useGetRocketByIdQuery(Number(id));
 
   const chips = useMemo(() => (data ? getRocketChips(data) : null), [data]);
 
-  if (isLoading) {
+  if (isFetching) {
     return <Spinner variant="fixed" />;
   }
 

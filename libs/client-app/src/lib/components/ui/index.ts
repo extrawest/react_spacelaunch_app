@@ -9,3 +9,4 @@ export { LaunchOverview } from './LaunchOverview/LaunchOverview';
 export { Map } from './Map/Map';
 export { YouTubeVideo } from './YouTubeVideo/YouTubeVideo';
 export { RocketDetails } from './RocketDetails/RocketDetails';
+export { RelatedEventInfo } from './RelatedEventInfo/RelatedEventInfo';

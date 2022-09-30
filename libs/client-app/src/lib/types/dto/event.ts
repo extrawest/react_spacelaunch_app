@@ -1,17 +1,19 @@
+import type { Nullable } from '@vladyslav.haiduk_react/shared/types';
+
 export type EventDTO = EventDTONamespace.RootObject;
 
 namespace EventDTONamespace {
-  export interface Type {
+  interface Type {
     id: number;
     name: string;
   }
 
-  export interface LaunchStatus {
+  interface LaunchStatus {
     id: number;
     name: string;
   }
 
-  export interface Launch {
+  interface Launch {
     id: string;
     url: string;
     launch_library_id: number;
@@ -29,15 +31,15 @@ namespace EventDTONamespace {
     landing_success?: any;
     launcher?: any;
     orbit: string;
-    image: string;
+    image?: Nullable<string>;
   }
 
-  export interface SpacestationStatus {
+  interface SpacestationStatus {
     id: number;
     name: string;
   }
 
-  export interface Spacestation {
+  interface Spacestation {
     id: number;
     url: string;
     name: string;
@@ -54,10 +56,10 @@ namespace EventDTONamespace {
     name: string;
     type: Type;
     description: string;
-    location: string;
-    news_url?: any;
-    video_url: string;
-    feature_image?: string | null;
+    location?: Nullable<string>;
+    news_url?: Nullable<string>;
+    video_url?: Nullable<string>;
+    feature_image?: Nullable<string>;
     date: Date;
     launches: Launch[];
     expeditions: any[];
