@@ -29,7 +29,11 @@ export const LaunchOverview: FC<LaunchOverviewProps> = ({ launch }) => {
             {launch.rocket.spacecraft_stage?.destination}
           </PropertyValue>
         )}
-        <PropertyValue property="Mission">{launch.mission.type}</PropertyValue>
+        {launch.mission && (
+          <PropertyValue property="Mission">
+            {launch.mission.type}
+          </PropertyValue>
+        )}
       </Stack>
       <Box sx={styles.chipsWrapper}>
         <ChipsList
@@ -37,7 +41,9 @@ export const LaunchOverview: FC<LaunchOverviewProps> = ({ launch }) => {
           gap={2.5}
         />
       </Box>
-      <Typography variant="body2">{launch.mission.description}</Typography>
+      {launch.mission && (
+        <Typography variant="body2">{launch.mission.description}</Typography>
+      )}
     </Stack>
   );
 };

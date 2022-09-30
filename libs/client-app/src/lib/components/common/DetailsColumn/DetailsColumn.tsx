@@ -19,7 +19,7 @@ export const DetailsColumn: FC<DetailsColumnProps> = ({
       <Typography variant="subtitle1">{title}</Typography>
       <Stack spacing={1.25}>
         {details.map((detail) => (
-          <div>
+          <div key={detail.label}>
             <Typography variant="body1">{detail.label}</Typography>
             <Typography
               variant="body1"

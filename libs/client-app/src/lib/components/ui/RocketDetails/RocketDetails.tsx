@@ -30,37 +30,42 @@ export const RocketDetails: FC<RocketDetailsProps> = ({ rocket }) => {
   );
 
   return (
-    <Grid container>
+    <div>
       <Grid
-        item
-        lg={4}
+        container
+        columnSpacing={2}
       >
-        <DetailsColumn
-          icon={<RocketIcon />}
-          title={t('rocket:family_details_title')}
-          details={familyDetails}
-        />
+        <Grid
+          item
+          lg={4}
+        >
+          <DetailsColumn
+            icon={<RocketIcon />}
+            title={t('rocket:family_details_title')}
+            details={familyDetails}
+          />
+        </Grid>
+        <Grid
+          item
+          lg={4}
+        >
+          <DetailsColumn
+            icon={<DocsIcon />}
+            title={t('rocket:specifications_details_title')}
+            details={specificationsDetails}
+          />
+        </Grid>
+        <Grid
+          item
+          lg={4}
+        >
+          <DetailsColumn
+            icon={<LaunchIcon />}
+            title={t('rocket:payload_capacity_details_title')}
+            details={payloadCapacityDetails}
+          />
+        </Grid>
       </Grid>
-      <Grid
-        item
-        lg={4}
-      >
-        <DetailsColumn
-          icon={<DocsIcon />}
-          title={t('rocket:specifications_details_title')}
-          details={specificationsDetails}
-        />
-      </Grid>
-      <Grid
-        item
-        lg={4}
-      >
-        <DetailsColumn
-          icon={<LaunchIcon />}
-          title={t('rocket:payload_capacity_details_title')}
-          details={payloadCapacityDetails}
-        />
-      </Grid>
-    </Grid>
+    </div>
   );
 };

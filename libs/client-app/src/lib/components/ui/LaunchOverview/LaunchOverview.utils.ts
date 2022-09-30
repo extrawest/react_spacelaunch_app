@@ -6,17 +6,21 @@ import type { CustomChipProps } from '../../common';
 export const getLaunchChips = (launch: LaunchDTO) => {
   const list: CustomChipProps[] = [];
 
-  list.push({
-    label: launch.pad.name,
-    gradient: true,
-  });
+  if (launch.pad) {
+    list.push({
+      label: launch.pad.name,
+      gradient: true,
+    });
+  }
 
-  list.push({
-    label: stringGuard(launch.mission.orbit)
-      ? launch.mission.orbit
-      : launch.mission.orbit.name,
-    gradient: true,
-  });
+  if (launch.mission) {
+    list.push({
+      label: stringGuard(launch.mission.orbit)
+        ? launch.mission.orbit
+        : launch.mission.orbit.name,
+      gradient: true,
+    });
+  }
 
   if (launch.probability) {
     list.push({
@@ -25,9 +29,11 @@ export const getLaunchChips = (launch: LaunchDTO) => {
     });
   }
 
-  list.push({
-    label: launch.pad.location.name,
-  });
+  if (launch.pad) {
+    list.push({
+      label: launch.pad.location.name,
+    });
+  }
 
   return list;
 };

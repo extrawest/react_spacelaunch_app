@@ -35,21 +35,21 @@ namespace RocketDTONamespace {
     description: string;
     family: string;
     full_name: string;
-    launch_service_provider: LaunchServiceProvider;
-    variant: string;
-    alias: string;
+    launch_service_provider?: Nullable<LaunchServiceProvider>;
+    variant?: Nullable<string>;
+    alias?: Nullable<string>;
     min_stage: number;
     max_stage: number;
     length: number;
     diameter: number;
     maiden_flight: string;
     launch_mass: number;
-    leo_capacity: number;
+    leo_capacity?: Nullable<number>;
     gto_capacity?: Nullable<number>;
     to_thrust: number;
     apogee?: Nullable<number>;
     vehicle_range?: any;
-    image_url: string;
+    image_url?: Nullable<string>;
     info_url?: Nullable<string>;
     wiki_url: string;
   }
