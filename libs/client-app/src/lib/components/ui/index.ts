@@ -6,3 +6,5 @@ export { EventsCarousel } from './EventsCarousel/EventsCarousel';
 export { LaunchesList } from './LaunchesList/LaunchesList';
 export { RocketInfo } from './RocketInfo/RocketInfo';
 export { LaunchInfo } from './LaunchInfo/LaunchInfo';
+export { Map } from './Map/Map';
+export { YouTubeVideo } from './YouTubeVideo/YouTubeVideo';
