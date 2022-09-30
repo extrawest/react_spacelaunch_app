@@ -63,10 +63,6 @@ export const EventsCarousel: FC<EventsCarouselProps> = ({
         modules={[Navigation, A11y]}
         spaceBetween={20}
         slidesPerView={SLIDES_PER_VIEW}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
         onInit={(swiper) => {
           if (
             !undefinedGuard(swiper.params.navigation) &&
@@ -74,8 +70,8 @@ export const EventsCarousel: FC<EventsCarouselProps> = ({
           ) {
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;
-            swiper.init();
-            swiper.update();
+            swiper.navigation.init();
+            swiper.navigation.update();
           }
         }}
       >
