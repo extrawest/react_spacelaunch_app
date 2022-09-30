@@ -3,10 +3,11 @@ import { useRef } from 'react';
 
 import { Button, Stack, Typography } from '@mui/material';
 
-import { range } from 'lodash';
 import { A11y, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+
+import { range } from '@vladyslav.haiduk_react/shared/utils';
 
 import { LeftArrowIcon, RightArrowIcon } from '../../../assets/icons';
 import { EventCard } from './EventCard/EventCard';

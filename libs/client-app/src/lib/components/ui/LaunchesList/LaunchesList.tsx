@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { Grid, Stack, Typography } from '@mui/material';
 
-import { range } from 'lodash';
+import { range } from '@vladyslav.haiduk_react/shared/utils';
 
 import { LaunchCard } from './LaunchCard/LaunchCard';
 import { LaunchCardSkeleton } from './LaunchCardSkeleton/LaunchCardSkeleton';
