@@ -103,6 +103,7 @@ theme.typography.caption = {
   fontStyle: 'italic',
   lineHeight: pctToFloat(100),
   color: theme.palette.text.colorful,
+  textTransform: 'uppercase',
 };
 
 theme.components = {

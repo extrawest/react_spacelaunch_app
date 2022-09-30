@@ -8,10 +8,11 @@ import { CustomChip } from '../CustomChip/CustomChip';
 import { styles } from './ChipsList.styles';
 import type { ChipsListProps } from './ChipsList.types';
 
-export const ChipsList: FC<ChipsListProps> = ({ chips, gradient }) => {
+export const ChipsList: FC<ChipsListProps> = ({ chips, gap, gradient }) => {
   return (
     <Stack
       direction="row"
+      gap={gap}
       sx={styles.wrapper}
     >
       {chips.map((chipProps) => {

@@ -3,9 +3,9 @@ import { Navigate, useParams } from 'react-router-dom';
 import { Spinner } from '../../components/common';
 import { LaunchIntro } from '../../components/intros';
 import {
-  LaunchInfo,
+  LaunchOverview,
   MetaData,
-  RocketInfo,
+  RocketOverview,
   Map,
   YouTubeVideo,
 } from '../../components/ui';
@@ -36,8 +36,8 @@ export const LaunchContainer = () => {
         intro={<LaunchIntro launch={data} />}
       >
         {videoUrl && <YouTubeVideo url={videoUrl} />}
-        <LaunchInfo launch={data} />
-        <RocketInfo rocket={data.rocket.configuration} />
+        <LaunchOverview launch={data} />
+        <RocketOverview rocket={data.rocket.configuration} />
         <Map
           lat={Number(data.pad.latitude)}
           lng={Number(data.pad.longitude)}
