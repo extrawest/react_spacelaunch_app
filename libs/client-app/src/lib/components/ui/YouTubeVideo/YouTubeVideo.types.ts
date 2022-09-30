@@ -1,3 +1,3 @@
 export interface YouTubeVideoProps {
-  videoId: string;
+  url: string;
 }

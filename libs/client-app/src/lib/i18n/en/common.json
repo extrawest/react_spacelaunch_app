@@ -1,4 +1,4 @@
 {
   "back_home": "Back To Home",
-  "copyright": "© 2021 Copyright"
+  "copyright": "© {{ year }} Copyright"
 }

@@ -6,11 +6,11 @@ import { Box, Stack, Typography } from '@mui/material';
 
 import { NamespacesEnum } from '../../../types/enums';
 import { ChipsList, PropertyValue } from '../../common';
-import { styles } from './LaunchInfo.styles';
-import type { LaunchInfoProps } from './LaunchInfo.types';
-import { getLaunchChips } from './LaunchInfo.utils';
+import { styles } from './LaunchOverview.styles';
+import type { LaunchOverviewProps } from './LaunchOverview.types';
+import { getLaunchChips } from './LaunchOverview.utils';
 
-export const LaunchInfo: FC<LaunchInfoProps> = ({ launch }) => {
+export const LaunchOverview: FC<LaunchOverviewProps> = ({ launch }) => {
   const { t } = useTranslation([NamespacesEnum.Launch]);
 
   const chips = useMemo(() => getLaunchChips(launch), [launch]);
@@ -34,7 +34,7 @@ export const LaunchInfo: FC<LaunchInfoProps> = ({ launch }) => {
       <Box sx={styles.chipsWrapper}>
         <ChipsList
           chips={chips}
-          gradient
+          gap={2.5}
         />
       </Box>
       <Typography variant="body2">{launch.mission.description}</Typography>

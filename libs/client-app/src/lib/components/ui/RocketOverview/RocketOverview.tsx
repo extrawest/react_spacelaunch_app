@@ -8,10 +8,10 @@ import { Stack, Typography } from '@mui/material';
 import { RoutesObj } from '../../../types/constants';
 import { NamespacesEnum } from '../../../types/enums';
 import { CustomButton, PropertyValue } from '../../common';
-import { styles } from './RocketInfo.styles';
-import type { RocketInfoProps } from './RocketInfo.types';
+import { styles } from './RocketOverview.styles';
+import type { RocketOverviewProps } from './RocketOverview.types';
 
-export const RocketInfo: FC<RocketInfoProps> = ({ rocket }) => {
+export const RocketOverview: FC<RocketOverviewProps> = ({ rocket }) => {
   const { t } = useTranslation([NamespacesEnum.Launch]);
   const navigate = useNavigate();
 

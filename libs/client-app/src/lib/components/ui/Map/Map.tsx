@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 
 import { Box } from '@mui/material';
 
-import { Spinner } from '../Spinner/Spinner';
+import { Spinner } from '../../common';
 import { styles } from './Map.styles';
 import type { MapProps } from './Map.types';
 

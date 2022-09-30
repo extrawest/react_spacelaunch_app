@@ -1,16 +1,8 @@
 import type { FC } from 'react';
-import { useMemo } from 'react';
+import Countdown from 'react-countdown';
 import { useTranslation } from 'react-i18next';
 
 import { Box, Stack, Typography } from '@mui/material';
-
-import { mapValues } from 'lodash';
-
-import { useCurrentDate } from '@vladyslav.haiduk_react/shared/hooks';
-import {
-  compareDates,
-  formatTimeNumber,
-} from '@vladyslav.haiduk_react/shared/utils';
 
 import { LaunchIntroImage } from '../../../assets/images';
 import { NamespacesEnum } from '../../../types/enums';
@@ -21,12 +13,6 @@ import type { LaunchIntroContentProps } from './LaunchIntro.types';
 
 export const LaunchIntro: FC<LaunchIntroContentProps> = ({ launch }) => {
   const { t } = useTranslation([NamespacesEnum.Launch]);
-  const date = useCurrentDate();
-
-  const { days, hours, minutes, seconds } = useMemo(() => {
-    const diff = compareDates(launch.window_start, date);
-    return mapValues(diff, formatTimeNumber);
-  }, [launch, date]);
 
   return (
     <Intro
@@ -46,14 +32,23 @@ export const LaunchIntro: FC<LaunchIntroContentProps> = ({ launch }) => {
         >
           {t('launch:open_launch')}
         </Typography>
-        <Box sx={styles.timer}>
-          <Typography
-            component="time"
-            variant="h1"
-          >
-            {`${days} : ${hours} : ${minutes} : ${seconds}`}
-          </Typography>
-        </Box>
+        <Countdown
+          date={launch.window_start}
+          renderer={(props) => {
+            const { days, hours, minutes, seconds } = props.formatted;
+
+            return (
+              <Box sx={styles.timer}>
+                <Typography
+                  component="time"
+                  variant="h1"
+                >
+                  {`${days} : ${hours} : ${minutes} : ${seconds}`}
+                </Typography>
+              </Box>
+            );
+          }}
+        />
       </Stack>
     </Intro>
   );

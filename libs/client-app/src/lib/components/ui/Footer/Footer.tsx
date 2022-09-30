@@ -17,7 +17,9 @@ export const Footer = () => {
         <LogoIcon />
       </SvgIcon>
 
-      <Typography variant="body2">{t('copyright')}</Typography>
+      <Typography variant="body2">
+        {t('copyright', { year: new Date().getFullYear() })}
+      </Typography>
     </Container>
   );
 };
