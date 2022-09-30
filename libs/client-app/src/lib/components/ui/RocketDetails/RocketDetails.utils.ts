@@ -80,7 +80,7 @@ export const getPayloadCapacityDetails = (rocket: RocketDTO) => {
     },
     {
       label: 'Low Earth Orbit',
-      value: getValue(null),
+      value: getValue(rocket.leo_capacity, `${rocket.leo_capacity} kg`),
     },
     {
       label: 'Geostationary Transfer Orbit',

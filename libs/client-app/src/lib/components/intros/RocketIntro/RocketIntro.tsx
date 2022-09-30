@@ -11,7 +11,7 @@ import { formatMaidenFlightDate } from './RocketIntro.utils';
 export const RocketIntro: FC<RocketIntroProps> = ({ rocket }) => {
   return (
     <Intro
-      bgimage={RocketIntroImage}
+      bgimage={rocket.image_url ?? RocketIntroImage}
       hasGradient
     >
       <Stack sx={styles.wrapper}>
@@ -21,13 +21,15 @@ export const RocketIntro: FC<RocketIntroProps> = ({ rocket }) => {
         >
           {rocket.full_name}
         </Typography>
-        <Typography
-          variant="subtitle1"
-          sx={styles.subtitle}
-        >
-          {rocket.launch_service_provider.name} (
-          {rocket.launch_service_provider.abbrev})
-        </Typography>
+        {rocket.launch_service_provider && (
+          <Typography
+            variant="subtitle1"
+            sx={styles.subtitle}
+          >
+            {rocket.launch_service_provider.name} (
+            {rocket.launch_service_provider.abbrev})
+          </Typography>
+        )}
         <Typography
           component="time"
           variant="subtitle1"

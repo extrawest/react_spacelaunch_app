@@ -38,10 +38,12 @@ export const LaunchContainer = () => {
         {videoUrl && <YouTubeVideo url={videoUrl} />}
         <LaunchOverview launch={data} />
         <RocketOverview rocket={data.rocket.configuration} />
-        <Map
-          lat={Number(data.pad.latitude)}
-          lng={Number(data.pad.longitude)}
-        />
+        {data.pad && (
+          <Map
+            lat={Number(data.pad.latitude)}
+            lng={Number(data.pad.longitude)}
+          />
+        )}
       </PageLayout>
     </>
   );

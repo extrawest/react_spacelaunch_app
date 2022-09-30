@@ -344,8 +344,8 @@ namespace LaunchDTONamespace {
     hashtag?: string;
     launch_service_provider?: Nullable<LaunchServiceProvider>;
     rocket: Rocket;
-    mission: Mission;
-    pad: Pad;
+    mission?: Nullable<Mission>;
+    pad?: Nullable<Pad>;
     infoURLs: string[];
     vidURLs: string[];
     image_url?: Nullable<string>;
