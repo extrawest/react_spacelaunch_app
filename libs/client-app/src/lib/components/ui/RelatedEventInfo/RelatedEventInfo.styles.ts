@@ -11,6 +11,7 @@ const infoWrapper: SxProps = {
 
 const imgWrapper: SxProps = {
   flex: 1,
+  maxHeight: 324,
   '& > img': {
     width: '100%',
     height: '100%',
