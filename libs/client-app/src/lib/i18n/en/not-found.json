@@ -1,1 +1,6 @@
-{}
+{
+  "title": "404",
+  "subtitle": "Page not Found",
+  "description": "The Page you are looking for doesn't exist or an other error occurred",
+  "go_home": "Go Home"
+}
