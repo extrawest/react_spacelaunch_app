@@ -16,9 +16,10 @@ export const EventIntro: FC<EventIntroProps> = ({ event }) => {
   const { t } = useTranslation([NamespacesEnum.Event]);
 
   const handleOpenSite = useCallback(() => {
-    // Todo: replace with link
-    alert('open');
-  }, []);
+    if (event.news_url) {
+      window.open(event.news_url, '_blank');
+    }
+  }, [event]);
 
   return (
     <Intro
@@ -39,9 +40,11 @@ export const EventIntro: FC<EventIntroProps> = ({ event }) => {
         >
           {event.description}
         </Typography>
-        <CustomButton onClick={handleOpenSite}>
-          {t('event:read_on_site')}
-        </CustomButton>
+        {event.news_url && (
+          <CustomButton onClick={handleOpenSite}>
+            {t('event:read_on_site')}
+          </CustomButton>
+        )}
       </Stack>
     </Intro>
   );

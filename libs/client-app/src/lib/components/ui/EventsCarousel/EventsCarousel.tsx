@@ -7,6 +7,10 @@ import { A11y, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
+import {
+  boolGuard,
+  undefinedGuard,
+} from '@vladyslav.haiduk_react/shared/types';
 import { range } from '@vladyslav.haiduk_react/shared/utils';
 
 import { LeftArrowIcon, RightArrowIcon } from '../../../assets/icons';
@@ -62,6 +66,17 @@ export const EventsCarousel: FC<EventsCarouselProps> = ({
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
+        }}
+        onInit={(swiper) => {
+          if (
+            !undefinedGuard(swiper.params.navigation) &&
+            !boolGuard(swiper.params.navigation)
+          ) {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+            swiper.init();
+            swiper.update();
+          }
         }}
       >
         {loading
