@@ -4,5 +4,7 @@
   "other_events_title": "Other Events",
   "launch_mission_property": "Mission",
   "launch_mission_type_property": "Mission Type",
-  "launch_location_property": "Location"
+  "launch_location_property": "Location",
+  "rocket_family_property": "Family",
+  "rocket_configuration_property": "Configuration"
 }

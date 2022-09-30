@@ -25,12 +25,12 @@ export const LaunchOverview: FC<LaunchOverviewProps> = ({ launch }) => {
       </Typography>
       <Stack spacing={0.625}>
         {launch.rocket.spacecraft_stage?.destination && (
-          <PropertyValue property="Destination">
+          <PropertyValue property={t('launch:launch_destination_property')}>
             {launch.rocket.spacecraft_stage?.destination}
           </PropertyValue>
         )}
         {launch.mission && (
-          <PropertyValue property="Mission">
+          <PropertyValue property={t('launch:launch_mission_property')}>
             {launch.mission.type}
           </PropertyValue>
         )}

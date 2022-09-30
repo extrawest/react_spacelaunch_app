@@ -1,5 +1,22 @@
 {
   "family_details_title": "Family",
   "specifications_details_title": "Specifications",
-  "payload_capacity_details_title": "Payload Capacity"
+  "payload_capacity_details_title": "Payload Capacity",
+  "rocket_name_property": "Name",
+  "rocket_family_property": "Family",
+  "rocket_variant_property": "Variant",
+  "rocket_full_name_property": "Full Name",
+  "rocket_alias_property": "Alias",
+  "rocket_min_stage_property": "Minimum Stage",
+  "rocket_max_stage_property": "Max Stage",
+  "rocket_length_property": "Length",
+  "rocket_diameter_property": "Diameter",
+  "rocket_launch_mass_property": "Launch Mass",
+  "rocket_thrust_property": "Thrust",
+  "rocket_apogee_property": "Apogee (Sub-Orbital)",
+  "rocket_launch_cost_property": "Launch Cost",
+  "rocket_leo_orbit_property": "Low Earth Orbit",
+  "rocket_geo_orbit_property": "Geostationary Transfer Orbit",
+  "rocket_direct_geostationary_property": "Direct Geostationary",
+  "rocket_sun_sync_capacity_property": "Sun-Synchronous Capacity"
 }

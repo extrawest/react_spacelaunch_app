@@ -28,9 +28,11 @@ export const RocketOverview: FC<RocketOverviewProps> = ({ rocket }) => {
         {rocket.full_name}
       </Typography>
       <Stack spacing={0.625}>
-        <PropertyValue property="Family">{rocket.family}</PropertyValue>
+        <PropertyValue property={t('launch:rocket_family_property')}>
+          {rocket.family}
+        </PropertyValue>
         {rocket.variant && (
-          <PropertyValue property="Configuration">
+          <PropertyValue property={t('launch:rocket_configuration_property')}>
             {rocket.variant}
           </PropertyValue>
         )}

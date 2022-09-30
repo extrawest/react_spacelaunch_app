@@ -31,5 +31,3 @@ export const initI18n = () => {
       debug: process.env.NODE_ENV !== 'production',
     });
 };
-
-export const i18n = initI18n();
