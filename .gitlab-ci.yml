@@ -1,5 +1,14 @@
 image: node:16
 
+.env: &env
+  - echo "NX_GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" > ./apps/client/.env
+
+.pre_deploy: &pre_deploy
+  - yarn global add firebase-tools
+  - yarn install
+  - yarn build
+  - firebase use $FIREBASE_PROJECT_ID --token $FIREBASE_TOKEN
+
 cache:
   paths:
     - node_modules/
@@ -14,15 +23,13 @@ test:
     - yarn install
   allow_failure: false
   script:
-    - yarn test
+    - yarn test:all
 
 production:
   stage: deploy
   before_script:
-    - yarn global add firebase-tools
-    - yarn install
-    - yarn build
-    - firebase use $FIREBASE_PROJECT_ID --token $FIREBASE_TOKEN
+    - *env
+    - *pre_deploy
   only:
     - main
   allow_failure: false
