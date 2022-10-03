@@ -13,7 +13,7 @@ export const registerWorkboxServiceWorker = async (swPath: string) => {
   }
 
   if ('serviceWorker' in navigator) {
-    const wb = new Workbox('service-worker.js');
+    const wb = new Workbox(swPath);
 
     try {
       await wb.register();
