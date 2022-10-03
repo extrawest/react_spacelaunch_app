@@ -1,5 +1,10 @@
 import { Workbox } from 'workbox-window';
 
+/**
+ * Register Service Worker
+ * @param {string} swPath - path to the Service Worker
+ * @returns {void}
+ */
 export const registerWorkboxServiceWorker = async (swPath: string) => {
   if (process.env.NODE_ENV !== 'production') {
     return console.warn(
