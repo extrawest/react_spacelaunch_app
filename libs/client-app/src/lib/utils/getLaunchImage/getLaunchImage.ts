@@ -1,4 +1,4 @@
-import type { LaunchDTO } from '../types/dto';
+import type { LaunchDTO } from '../../types/dto';
 
 /**
  * Get launch image
