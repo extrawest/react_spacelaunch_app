@@ -4,11 +4,10 @@ import { CustomButton } from './CustomButton';
 
 describe('[component]: CustomButton', () => {
   const text = 'Text';
-  const mockFn = jest.fn();
 
   test('Should match default style', () => {
     const { baseElement } = render(
-      <CustomButton onClick={mockFn}>{text}</CustomButton>
+      <CustomButton onClick={() => {}}>{text}</CustomButton>
     );
 
     expect(baseElement).toBeInTheDocument();
@@ -17,13 +16,14 @@ describe('[component]: CustomButton', () => {
 
   test('Text should be correct', () => {
     const { getByText } = render(
-      <CustomButton onClick={mockFn}>{text}</CustomButton>
+      <CustomButton onClick={() => {}}>{text}</CustomButton>
     );
 
     expect(getByText(text)).toHaveTextContent(text);
   });
 
   test('Click event should work', () => {
+    const mockFn = jest.fn();
     const { getByRole } = render(
       <CustomButton onClick={mockFn}>{text}</CustomButton>
     );
@@ -34,6 +34,5 @@ describe('[component]: CustomButton', () => {
 
   afterEach(() => {
     jest.clearAllMocks();
-    mockFn.mockClear();
   });
 });

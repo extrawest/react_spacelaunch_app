@@ -1,2 +1,2 @@
-export { useResetPageScroll } from './lib/useResetPageScroll';
-export { useEventListener } from './lib/useEventListener';
+export { useResetPageScroll } from './lib/useResetPageScroll/useResetPageScroll';
+export { useEventListener } from './lib/useEventListener/useEventListener';
