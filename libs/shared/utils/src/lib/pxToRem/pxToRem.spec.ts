@@ -1,6 +1,6 @@
 import { pxToRem } from './pxToRem';
 
-describe('[utility function]: pxToRem', () => {
+describe('[util]: pxToRem', () => {
   test('Should be equal', () => {
     expect(pxToRem(5)).toBe('0.3125rem');
     expect(pxToRem(16)).toBe('1rem');

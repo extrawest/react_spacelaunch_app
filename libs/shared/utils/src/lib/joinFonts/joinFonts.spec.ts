@@ -1,6 +1,6 @@
 import { joinFonts } from './joinFonts';
 
-describe('[utility function]: joinFonts', () => {
+describe('[util]: joinFonts', () => {
   test('Should be equal', () => {
     expect(joinFonts('Roboto', 'Monospace')).toBe('Roboto,Monospace');
     expect(joinFonts('Roboto', 'Monospace', 'Open Sans')).toBe(

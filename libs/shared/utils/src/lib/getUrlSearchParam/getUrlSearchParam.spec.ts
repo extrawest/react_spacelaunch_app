@@ -1,6 +1,6 @@
 import { getUrlSearchParam } from './getUrlSearchParam';
 
-describe('[utility function]: getUrlSearchParam', () => {
+describe('[util]: getUrlSearchParam', () => {
   const url = 'https://example.com?key1=value1&key2=value2';
   const invalidUrl = 'key1=value1&key2=value2';
 

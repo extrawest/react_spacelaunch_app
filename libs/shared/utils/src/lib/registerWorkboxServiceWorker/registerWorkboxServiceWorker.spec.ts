@@ -1,6 +1,6 @@
 import { registerWorkboxServiceWorker } from './registerWorkboxServiceWorker';
 
-describe('[utility function]: registerWorkboxServiceWorker', () => {
+describe('[util]: registerWorkboxServiceWorker', () => {
   const env = process.env;
 
   beforeEach(() => {

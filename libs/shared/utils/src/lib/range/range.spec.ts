@@ -1,6 +1,6 @@
 import { range } from './range';
 
-describe('[utility function]: range', () => {
+describe('[util]: range', () => {
   test('Should be equal', () => {
     expect(range(3)).toEqual([0, 1, 2]);
     expect(range(5)).toEqual([0, 1, 2, 3, 4]);

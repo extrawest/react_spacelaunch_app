@@ -1,6 +1,6 @@
 import { pctToFloat } from './pctToFloat';
 
-describe('[utility function]: pctToFloat', () => {
+describe('[util]: pctToFloat', () => {
   test('Should be equal', () => {
     expect(pctToFloat(50)).toBe(0.5);
     expect(pctToFloat(100)).toBe(1);

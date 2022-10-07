@@ -1,6 +1,6 @@
 import { formatDate } from './formatDate';
 
-describe('[utility function]: formatDate', () => {
+describe('[util]: formatDate', () => {
   test('Should be correct', () => {
     expect(formatDate(new Date('1995-12-17T03:24:00'))).toBe(
       'Dec. 17, 1995, 3:24 am'

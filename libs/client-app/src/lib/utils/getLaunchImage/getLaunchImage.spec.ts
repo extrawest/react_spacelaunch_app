@@ -1,7 +1,7 @@
 import type { LaunchDTO } from '../../types/dto';
 import { getLaunchImage } from './getLaunchImage';
 
-describe('[utility function]: getLaunchImage', () => {
+describe('[util]: getLaunchImage', () => {
   const launch: LaunchDTO = {
     id: '',
     url: '',
