@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
-import { ChipsList, Spinner } from '../../components/common';
+import { Spinner } from '../../components/common';
 import { RocketIntro } from '../../components/intros';
-import { MetaData, RocketDetails } from '../../components/ui';
+import { MetaData, RocketDetails, ChipsList } from '../../components/ui';
 import { PageLayout } from '../../layouts';
 import { useGetRocketByIdQuery } from '../../store';
 import { RoutesObj } from '../../types/constants';

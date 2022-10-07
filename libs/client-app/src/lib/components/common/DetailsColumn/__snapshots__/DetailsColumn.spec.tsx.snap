@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[component]: DetailsColumn Should match style with details 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1qo1efa-MuiStack-root"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-subtitle1 css-10wpov9-MuiTypography-root"
+      >
+        Title
+      </h6>
+      <div
+        class="css-k51q53-MuiStack-root"
+      >
+        <div>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            Label 1
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ndaqpv-MuiTypography-root"
+          >
+            Value 1
+          </p>
+        </div>
+        <div>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            Label 2
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ndaqpv-MuiTypography-root"
+          >
+            Value 2
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`[component]: DetailsColumn Should match style without details 1`] = `
+<body>
+  <div>
+    <div
+      class="css-1qo1efa-MuiStack-root"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-subtitle1 css-10wpov9-MuiTypography-root"
+      >
+        Title
+      </h6>
+      <div
+        class="css-k51q53-MuiStack-root"
+      />
+    </div>
+  </div>
+</body>
+`;

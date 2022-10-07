@@ -20,10 +20,10 @@ describe('[utility function]: getUrlSearchParam', () => {
   });
 
   test('Should use URLSearchParams get method', () => {
-    const spiedGet = jest.spyOn(URLSearchParams.prototype, 'get');
+    const mockGet = jest.spyOn(URLSearchParams.prototype, 'get');
     getUrlSearchParam(url, 'key1');
     getUrlSearchParam(url, 'key2');
-    expect(spiedGet).toBeCalledTimes(2);
+    expect(mockGet).toBeCalledTimes(2);
   });
 
   afterEach(() => {
