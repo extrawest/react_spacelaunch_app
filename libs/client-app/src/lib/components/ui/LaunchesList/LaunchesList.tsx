@@ -28,7 +28,7 @@ export const LaunchesList: FC<LaunchesListProps> = ({
       <div>
         <Grid
           container
-          columnSpacing={2.5}
+          columnSpacing={{ lg: 2.5, xs: 0 }}
           rowSpacing={6.25}
         >
           {loading
@@ -46,6 +46,7 @@ export const LaunchesList: FC<LaunchesListProps> = ({
                   item
                   key={launch.id}
                   lg={6}
+                  sx={styles.item}
                 >
                   <LaunchCard launch={launch} />
                 </Grid>

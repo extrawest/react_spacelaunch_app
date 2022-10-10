@@ -4,4 +4,8 @@ const title: SxProps = {
   textAlign: 'center',
 };
 
-export const styles = { title };
+const item: SxProps = {
+  width: '100%',
+};
+
+export const styles = { title, item };

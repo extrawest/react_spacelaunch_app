@@ -14,8 +14,8 @@ const contentWrapper: SxProps = {
 
 const content: SxProps = {
   width: '100%',
-  px: 16,
-  py: 12.5,
+  px: { lg: 16, md: 12, xs: 8 },
+  py: { lg: 12.5, md: 10, xs: 7.5 },
   borderRadius: 0,
   boxShadow: 0,
 };

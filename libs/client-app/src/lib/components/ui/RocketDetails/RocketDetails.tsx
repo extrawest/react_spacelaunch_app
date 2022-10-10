@@ -34,10 +34,13 @@ export const RocketDetails: FC<RocketDetailsProps> = ({ rocket }) => {
       <Grid
         container
         columnSpacing={2}
+        rowSpacing={8}
       >
         <Grid
           item
           lg={4}
+          md={6}
+          xs={12}
         >
           <DetailsColumn
             icon={<RocketIcon />}
@@ -48,6 +51,8 @@ export const RocketDetails: FC<RocketDetailsProps> = ({ rocket }) => {
         <Grid
           item
           lg={4}
+          md={6}
+          xs={12}
         >
           <DetailsColumn
             icon={<DocsIcon />}
@@ -58,6 +63,8 @@ export const RocketDetails: FC<RocketDetailsProps> = ({ rocket }) => {
         <Grid
           item
           lg={4}
+          md={12}
+          xs={12}
         >
           <DetailsColumn
             icon={<LaunchIcon />}
