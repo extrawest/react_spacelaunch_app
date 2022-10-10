@@ -18,7 +18,7 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
       {children && (
         <Box sx={styles.contentWrapper}>
           <Paper sx={styles.content}>
-            <Stack spacing={12.5}>{children}</Stack>
+            <Stack spacing={{ md: 12.5, sm: 10, xs: 7.5 }}>{children}</Stack>
           </Paper>
         </Box>
       )}

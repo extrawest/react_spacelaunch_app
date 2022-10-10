@@ -49,7 +49,7 @@ export const EventsCarousel: FC<EventsCarouselProps> = ({
         <Typography variant="h2">{title}</Typography>
         <Stack
           direction="row"
-          spacing={3.75}
+          spacing={{ md: 3.75, sm: 2.25, xs: 1 }}
           sx={styles.nav({ hidden: hiddenNavigation })}
         >
           <Button
