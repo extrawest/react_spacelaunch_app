@@ -37,6 +37,7 @@ export const LaunchesList: FC<LaunchesListProps> = ({
                   item
                   key={i}
                   lg={6}
+                  sx={styles.item}
                 >
                   <LaunchCardSkeleton />
                 </Grid>
