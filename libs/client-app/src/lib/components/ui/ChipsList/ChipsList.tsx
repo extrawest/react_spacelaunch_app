@@ -4,7 +4,7 @@ import { Stack } from '@mui/material';
 
 import { undefinedGuard } from '@vladyslav.haiduk_react/shared/types';
 
-import { CustomChip } from '../CustomChip/CustomChip';
+import { CustomChip } from '../../common/CustomChip/CustomChip';
 import { styles } from './ChipsList.styles';
 import type { ChipsListProps } from './ChipsList.types';
 

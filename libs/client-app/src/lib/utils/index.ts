@@ -1,2 +1,2 @@
-export { formatDate } from './formatDate';
-export { getLaunchImage } from './getLaunchImage';
+export { formatDate } from './formatDate/formatDate';
+export { getLaunchImage } from './getLaunchImage/getLaunchImage';

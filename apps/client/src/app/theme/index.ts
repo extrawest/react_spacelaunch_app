@@ -49,6 +49,15 @@ theme.typography.h1 = {
   fontStyle: 'normal',
   lineHeight: pctToFloat(121),
   color: theme.palette.text.colorful,
+  [theme.breakpoints.down('lg')]: {
+    fontSize: pxToRem(68),
+  },
+  [theme.breakpoints.down('md')]: {
+    fontSize: pxToRem(56),
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: pxToRem(48),
+  },
 };
 
 theme.typography.h2 = {
@@ -58,6 +67,15 @@ theme.typography.h2 = {
   fontStyle: 'normal',
   lineHeight: pctToFloat(119),
   color: theme.palette.text.colorful,
+  [theme.breakpoints.down('lg')]: {
+    fontSize: pxToRem(46),
+  },
+  [theme.breakpoints.down('md')]: {
+    fontSize: pxToRem(38),
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: pxToRem(30),
+  },
 };
 
 theme.typography.subtitle1 = {
@@ -67,6 +85,15 @@ theme.typography.subtitle1 = {
   fontStyle: 'normal',
   lineHeight: pctToFloat(146),
   color: theme.palette.text.colorful,
+  [theme.breakpoints.down('lg')]: {
+    fontSize: pxToRem(24),
+  },
+  [theme.breakpoints.down('md')]: {
+    fontSize: pxToRem(26),
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: pxToRem(22),
+  },
 };
 
 theme.typography.body1 = {
@@ -76,6 +103,9 @@ theme.typography.body1 = {
   fontStyle: 'normal',
   lineHeight: pctToFloat(165),
   color: theme.palette.text.primary,
+  [theme.breakpoints.down('md')]: {
+    fontSize: pxToRem(16),
+  },
 };
 
 theme.typography.body2 = {
@@ -85,6 +115,9 @@ theme.typography.body2 = {
   fontStyle: 'normal',
   lineHeight: pctToFloat(165),
   color: theme.palette.text.secondary,
+  [theme.breakpoints.down('md')]: {
+    fontSize: pxToRem(16),
+  },
 };
 
 theme.typography.button = {
@@ -94,6 +127,12 @@ theme.typography.button = {
   fontStyle: 'normal',
   lineHeight: pctToFloat(100),
   color: theme.palette.text.colorful,
+  [theme.breakpoints.down('md')]: {
+    fontSize: pxToRem(18),
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: pxToRem(16),
+  },
 };
 
 theme.typography.caption = {
@@ -104,6 +143,9 @@ theme.typography.caption = {
   lineHeight: pctToFloat(100),
   color: theme.palette.text.colorful,
   textTransform: 'uppercase',
+  [theme.breakpoints.down('md')]: {
+    fontSize: pxToRem(16),
+  },
 };
 
 theme.components = {

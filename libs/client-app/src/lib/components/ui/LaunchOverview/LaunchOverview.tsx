@@ -5,7 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { Box, Stack, Typography } from '@mui/material';
 
 import { NamespacesEnum } from '../../../types/enums';
-import { ChipsList, PropertyValue } from '../../common';
+import { PropertyValue } from '../../common';
+import { ChipsList } from '../../ui';
 import { styles } from './LaunchOverview.styles';
 import type { LaunchOverviewProps } from './LaunchOverview.types';
 import { getLaunchChips } from './LaunchOverview.utils';

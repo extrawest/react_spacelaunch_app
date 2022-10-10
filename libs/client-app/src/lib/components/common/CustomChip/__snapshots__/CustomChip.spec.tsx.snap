@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[component]: CustomChip Should match default style 1`] = `
+<body>
+  <div>
+    <div
+      class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault css-14f8vjg-MuiChip-root"
+    >
+      <span
+        class="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label"
+      >
+        Label
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`[component]: CustomChip Should match style with gradient 1`] = `
+<body>
+  <div>
+    <div
+      class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault css-196zyfn-MuiChip-root"
+    >
+      <span
+        class="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label"
+      >
+        Label
+      </span>
+    </div>
+  </div>
+</body>
+`;

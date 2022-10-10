@@ -14,8 +14,8 @@ const subtitle: SxProps = {
 };
 
 const timer: SxProps = {
-  px: 8.75,
-  py: 6.25,
+  px: { md: 8.75, sm: 6.5, xs: 4.25 },
+  py: { md: 6.25, sm: 5, xs: 3.75 },
   bgcolor: 'primary.main',
 };
 

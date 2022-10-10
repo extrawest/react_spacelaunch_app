@@ -5,7 +5,10 @@ const title: SxProps = {
 };
 
 const infoWrapper: SxProps = {
-  flexDirection: 'row',
+  flexDirection: {
+    md: 'row',
+    xs: 'column',
+  },
   gap: 2.5,
 };
 

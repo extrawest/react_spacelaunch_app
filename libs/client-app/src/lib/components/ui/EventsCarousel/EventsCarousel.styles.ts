@@ -15,6 +15,7 @@ const nav: StylesWithOptions<NavStylesOptions> = ({ hidden }) => ({
 
 const navButton: SxProps<Theme> = (theme) => ({
   '& > svg': {
+    width: { md: 56, sm: 48, xs: 40 },
     fill: theme.palette.primary.main,
   },
   '&.swiper-button-disabled > svg': {

@@ -10,3 +10,4 @@ export { Map } from './Map/Map';
 export { YouTubeVideo } from './YouTubeVideo/YouTubeVideo';
 export { RocketDetails } from './RocketDetails/RocketDetails';
 export { RelatedEventInfo } from './RelatedEventInfo/RelatedEventInfo';
+export { ChipsList } from './ChipsList/ChipsList';

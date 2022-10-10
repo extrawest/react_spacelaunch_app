@@ -1,6 +1,7 @@
 import type { FC } from 'react';
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
+import { useMediaQuery, useTheme } from '@mui/material';
 import { Button, Stack, Typography } from '@mui/material';
 
 import { A11y, Navigation } from 'swiper';
@@ -19,18 +20,25 @@ import { EventCardSkeleton } from './EventCardSkeleton/EventCardSkeleton';
 import { styles } from './EventsCarousel.styles';
 import type { EventsCarouselProps } from './EventsCarousel.types';
 
-const SLIDES_PER_VIEW = 3;
-
 export const EventsCarousel: FC<EventsCarouselProps> = ({
   title,
   events,
   loading,
 }) => {
+  const theme = useTheme();
+  const widthLessLg = useMediaQuery(theme.breakpoints.down('lg'));
+  const widthLessMd = useMediaQuery(theme.breakpoints.down('md'));
+
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
-  const hiddenNavigation =
-    loading || !events || events.length <= SLIDES_PER_VIEW;
+  const slidesPerView = useMemo(() => {
+    if (widthLessMd) return 1;
+    if (widthLessLg) return 2;
+    return 3;
+  }, [widthLessLg, widthLessMd]);
+
+  const hiddenNavigation = loading || !events || events.length <= slidesPerView;
 
   return (
     <Stack spacing={5}>
@@ -41,7 +49,7 @@ export const EventsCarousel: FC<EventsCarouselProps> = ({
         <Typography variant="h2">{title}</Typography>
         <Stack
           direction="row"
-          spacing={3.75}
+          spacing={{ md: 3.75, sm: 2.25, xs: 1 }}
           sx={styles.nav({ hidden: hiddenNavigation })}
         >
           <Button
@@ -62,7 +70,7 @@ export const EventsCarousel: FC<EventsCarouselProps> = ({
       <Swiper
         modules={[Navigation, A11y]}
         spaceBetween={20}
-        slidesPerView={SLIDES_PER_VIEW}
+        slidesPerView={slidesPerView}
         onInit={(swiper) => {
           if (
             !undefinedGuard(swiper.params.navigation) &&
@@ -76,7 +84,7 @@ export const EventsCarousel: FC<EventsCarouselProps> = ({
         }}
       >
         {loading
-          ? range(SLIDES_PER_VIEW).map((i) => (
+          ? range(slidesPerView).map((i) => (
               <SwiperSlide key={i}>
                 <EventCardSkeleton />
               </SwiperSlide>

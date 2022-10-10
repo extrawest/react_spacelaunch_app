@@ -1,5 +1,10 @@
 import { Workbox } from 'workbox-window';
 
+/**
+ * Register Service Worker
+ * @param {string} swPath - path to the Service Worker
+ * @returns {void}
+ */
 export const registerWorkboxServiceWorker = async (swPath: string) => {
   if (process.env.NODE_ENV !== 'production') {
     return console.warn(
@@ -8,7 +13,7 @@ export const registerWorkboxServiceWorker = async (swPath: string) => {
   }
 
   if ('serviceWorker' in navigator) {
-    const wb = new Workbox('service-worker.js');
+    const wb = new Workbox(swPath);
 
     try {
       await wb.register();
