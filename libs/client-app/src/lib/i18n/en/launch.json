@@ -3,5 +3,7 @@
   "launch_overview_title": "Overview",
   "open_rocket_details": "See Rocket Details",
   "launch_destination_property": "Destination",
-  "launch_mission_property": "Mission"
+  "launch_mission_property": "Mission",
+  "rocket_family_property": "Family",
+  "rocket_configuration_property": "Configuration"
 }

@@ -32,23 +32,25 @@ export const LaunchIntro: FC<LaunchIntroContentProps> = ({ launch }) => {
         >
           {t('launch:open_launch')}
         </Typography>
-        <Countdown
-          date={launch.window_start}
-          renderer={(props) => {
-            const { days, hours, minutes, seconds } = props.formatted;
+        {launch.window_start && (
+          <Countdown
+            date={launch.window_start}
+            renderer={(props) => {
+              const { days, hours, minutes, seconds } = props.formatted;
 
-            return (
-              <Box sx={styles.timer}>
-                <Typography
-                  component="time"
-                  variant="h1"
-                >
-                  {`${days} : ${hours} : ${minutes} : ${seconds}`}
-                </Typography>
-              </Box>
-            );
-          }}
-        />
+              return (
+                <Box sx={styles.timer}>
+                  <Typography
+                    component="time"
+                    variant="h1"
+                  >
+                    {`${days} : ${hours} : ${minutes} : ${seconds}`}
+                  </Typography>
+                </Box>
+              );
+            }}
+          />
+        )}
       </Stack>
     </Intro>
   );

@@ -21,22 +21,25 @@ export const RocketIntro: FC<RocketIntroProps> = ({ rocket }) => {
         >
           {rocket.full_name}
         </Typography>
-        {rocket.launch_service_provider && (
+        {rocket.launch_service_provider?.name &&
+          rocket.launch_service_provider?.abbrev && (
+            <Typography
+              variant="subtitle1"
+              sx={styles.subtitle}
+            >
+              {rocket.launch_service_provider.name} (
+              {rocket.launch_service_provider.abbrev})
+            </Typography>
+          )}
+        {rocket.maiden_flight && (
           <Typography
+            component="time"
             variant="subtitle1"
-            sx={styles.subtitle}
+            sx={styles.date}
           >
-            {rocket.launch_service_provider.name} (
-            {rocket.launch_service_provider.abbrev})
+            {formatMaidenFlightDate(rocket.maiden_flight)}
           </Typography>
         )}
-        <Typography
-          component="time"
-          variant="subtitle1"
-          sx={styles.date}
-        >
-          {formatMaidenFlightDate(rocket.maiden_flight)}
-        </Typography>
         <Typography variant="body2">{rocket.description}</Typography>
       </Stack>
     </Intro>

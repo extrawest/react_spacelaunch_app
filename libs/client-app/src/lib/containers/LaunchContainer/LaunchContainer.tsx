@@ -26,7 +26,7 @@ export const LaunchContainer = () => {
     return <Navigate to={RoutesObj.NotFound} />;
   }
 
-  const videoUrl = data.vidURLs[0];
+  const videoUrl = data.vidURLs?.[0];
 
   return (
     <>
@@ -37,8 +37,10 @@ export const LaunchContainer = () => {
       >
         {videoUrl && <YouTubeVideo url={videoUrl} />}
         <LaunchOverview launch={data} />
-        <RocketOverview rocket={data.rocket.configuration} />
-        {data.pad && (
+        {data.rocket?.configuration && (
+          <RocketOverview rocket={data.rocket.configuration} />
+        )}
+        {data.pad?.latitude && data.pad?.longitude && (
           <Map
             lat={Number(data.pad.latitude)}
             lng={Number(data.pad.longitude)}
