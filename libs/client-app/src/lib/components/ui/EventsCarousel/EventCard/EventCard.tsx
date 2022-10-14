@@ -30,7 +30,7 @@ export const EventCard: FC<EventCardProps> = ({ event }) => {
           height={264}
         />
         <CardContent sx={styles.cardContent}>
-          <CustomChip label={formatDate(event.date)} />
+          {event.date && <CustomChip label={formatDate(event.date)} />}
           <Typography variant="subtitle1">{event.name}</Typography>
         </CardContent>
       </CardActionArea>

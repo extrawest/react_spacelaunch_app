@@ -31,12 +31,14 @@ export const LaunchCard: FC<LaunchCardProps> = ({ launch }) => {
           image={getLaunchImage(launch) ?? EmptyImage}
         />
         <CardContent sx={styles.cardContent}>
-          <Box sx={styles.chipWrapper}>
-            <CustomChip
-              label={formatDate(launch.window_start)}
-              gradient
-            />
-          </Box>
+          {launch.window_start && (
+            <Box sx={styles.chipWrapper}>
+              <CustomChip
+                label={formatDate(launch.window_start)}
+                gradient
+              />
+            </Box>
+          )}
           <Typography variant="subtitle1">{launch.name}</Typography>
         </CardContent>
       </CardActionArea>

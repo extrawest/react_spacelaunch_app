@@ -38,6 +38,7 @@ testem.log
 /typings
 /.firebase
 firebase-debug.log
+**/__snapshots__
 
 # System Files
 .DS_Store

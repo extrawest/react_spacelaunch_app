@@ -25,12 +25,12 @@ export const LaunchOverview: FC<LaunchOverviewProps> = ({ launch }) => {
         {t('launch:launch_overview_title')}
       </Typography>
       <Stack spacing={0.625}>
-        {launch.rocket.spacecraft_stage?.destination && (
+        {launch.rocket?.spacecraft_stage?.destination && (
           <PropertyValue property={t('launch:launch_destination_property')}>
-            {launch.rocket.spacecraft_stage?.destination}
+            {launch.rocket.spacecraft_stage.destination}
           </PropertyValue>
         )}
-        {launch.mission && (
+        {launch.mission?.type && (
           <PropertyValue property={t('launch:launch_mission_property')}>
             {launch.mission.type}
           </PropertyValue>
@@ -42,7 +42,7 @@ export const LaunchOverview: FC<LaunchOverviewProps> = ({ launch }) => {
           gap={2.5}
         />
       </Box>
-      {launch.mission && (
+      {launch.mission?.description && (
         <Typography variant="body2">{launch.mission.description}</Typography>
       )}
     </Stack>

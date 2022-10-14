@@ -45,7 +45,7 @@ export const EventContainer = () => {
         intro={<EventIntro event={data} />}
       >
         {data.video_url && <YouTubeVideo url={data.video_url} />}
-        {data.launches[0] && <RelatedEventInfo launch={data.launches[0]} />}
+        {data.launches?.[0] && <RelatedEventInfo launch={data.launches[0]} />}
         <EventsCarousel
           title={t('event:other_events_title')}
           events={otherEvents}

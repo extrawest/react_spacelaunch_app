@@ -33,7 +33,7 @@ export const EventIntro: FC<EventIntroProps> = ({ event }) => {
         >
           {event.name}
         </Typography>
-        <CustomChip label={formatDate(event.date)} />
+        {event.date && <CustomChip label={formatDate(event.date)} />}
         <Typography
           variant="body2"
           sx={styles.description}
