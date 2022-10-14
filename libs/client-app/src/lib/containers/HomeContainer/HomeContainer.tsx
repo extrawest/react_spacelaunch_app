@@ -1,18 +1,24 @@
 import { useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { Box } from '@mui/material';
 
+import { Loader } from '../../components/common';
 import { HomeIntro } from '../../components/intros';
 import { EventsCarousel, LaunchesList, MetaData } from '../../components/ui';
 import { PageLayout } from '../../layouts';
-import { useGetEventsQuery, useGetLaunchesQuery } from '../../store';
+import { useGetEventsQuery, useGetInfiniteLaunchesQuery } from '../../store';
 import { NamespacesEnum } from '../../types/enums';
 
 export const HomeContainer = () => {
   const { data: events, isLoading: isEventsLoading } = useGetEventsQuery();
-  const { data: launches, isLoading: isLaunchesLoading } =
-    useGetLaunchesQuery();
+  const {
+    combinedData: launches,
+    isLoading: isLaunchesLoading,
+    total,
+    fetchMore,
+  } = useGetInfiniteLaunchesQuery();
 
   const { t } = useTranslation([NamespacesEnum.Home]);
   const launchesBoxRef = useRef<HTMLDivElement>(null);
@@ -35,11 +41,23 @@ export const HomeContainer = () => {
           loading={isEventsLoading}
         />
         <Box ref={launchesBoxRef}>
-          <LaunchesList
-            title={t('home:launches_title')}
-            launches={launches}
-            loading={isLaunchesLoading}
-          />
+          <InfiniteScroll
+            dataLength={launches.length}
+            next={fetchMore}
+            hasMore={total > launches.length}
+            loader={
+              <Loader
+                label="Load More"
+                mt={6.25}
+              />
+            }
+          >
+            <LaunchesList
+              title={t('home:launches_title')}
+              launches={launches}
+              loading={isLaunchesLoading}
+            />
+          </InfiniteScroll>
         </Box>
       </PageLayout>
     </>

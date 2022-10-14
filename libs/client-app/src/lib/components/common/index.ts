@@ -5,3 +5,4 @@ export { Spinner } from './Spinner/Spinner';
 export { PropertyValue } from './PropertyValue/PropertyValue';
 export { DetailsColumn } from './DetailsColumn/DetailsColumn';
 export type { DetailParams } from './DetailsColumn/DetailsColumn.types';
+export { Loader } from './Loader/Loader';
