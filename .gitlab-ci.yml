@@ -23,7 +23,7 @@ test:
     - yarn install
   allow_failure: false
   script:
-    - yarn test:all
+    - yarn test:all --updateSnapshot
 
 production:
   stage: deploy
