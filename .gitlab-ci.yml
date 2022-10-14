@@ -1,7 +1,8 @@
 image: node:16
 
 .env: &env
-  - echo "NX_GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" > .env
+  - echo "NX_BASE_API_URL=$BASE_API_URL" > .env
+  - echo "NX_GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" >> .env
 
 .pre_deploy: &pre_deploy
   - yarn global add firebase-tools
